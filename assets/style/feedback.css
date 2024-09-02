@@ -65,12 +65,12 @@ input {
 }
 .star:hover{
   filter: drop-shadow(1px 1px 20px #00ffff);
+  transition: filter 0.3s ease;
 }
 
 .colorStar:hover path{
   fill: #00ffff;
-  
-  transition: filter 0.3s ease;
+ 
 }
 
 
