@@ -45,3 +45,18 @@ input {
 .star {
   display: inline-block;
 }
+
+.styleButton{
+  padding: 1rem;
+  width: 10rem;
+  border: 0;
+  background-color: #00ffff;
+  color: #191970;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.styleButton:hover{
+  background-color:  #00ffff;
+}
