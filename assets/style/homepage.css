@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 body {
   color: white;
-  margin: 0;
   background-image: url("../bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  box-sizing: border-box;
-  margin-inline: 30em;
+  margin-left: 30em;
   font-family: "Outfit", sans-serif;
 }
 img {
@@ -45,6 +45,7 @@ h1 {
 }
 form {
   margin-top: 5rem;
+  display: flex;
 }
 .button {
   padding: 1rem;
@@ -61,4 +62,38 @@ form {
 
 .button:hover {
   filter: drop-shadow(1px 1px 20px #00ffff);
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 17px;
+  height: 17px;
+  border: 2px solid white;
+  background-color: #191970;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+input[type="checkbox"]:checked {
+  background-color: #191970;
+}
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 2px;
+  height: 12px;
+  border: solid #00ffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.container-chechbox {
+  display: flex;
+  margin-top: 15px;
+}
+.container-chechbox label {
+  margin-top: 3px;
+  padding-left: 3px;
 }
