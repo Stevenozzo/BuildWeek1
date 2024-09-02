@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 body {
+  color: white;
   margin: 0;
   background-image: url("../bg.jpg");
   background-size: cover;
@@ -13,13 +14,12 @@ img {
   padding-top: 2.5em;
   margin-bottom: 4rem;
 }
-h1,
+
 p,
-span,
-li,
-label {
-  color: white;
+li {
+  font-weight: 250;
 }
+
 h3 {
   color: #900080;
   font-size: 30px;
