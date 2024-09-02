@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  background-image: url("../bg.jpg");
+  background-size: cover;
+  box-sizing: border-box;
+  margin-inline: 8em;
+  font-family: "Times New Roman", Times, serif;
+}
+body img {
+  width: 9em;
+  height: auto;
+  padding-top: 2.5em;
+}
+body h1 {
+  color: white;
+}
