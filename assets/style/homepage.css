@@ -5,7 +5,7 @@ body {
   background-image: url("../bg.jpg");
   background-size: cover;
   box-sizing: border-box;
-  margin-inline: 8em;
+  margin-inline: 30em;
   font-family: "Outfit", sans-serif;
 }
 img {
@@ -14,10 +14,18 @@ img {
   padding-top: 2.5em;
   margin-bottom: 4rem;
 }
-
+p {
+  margin-bottom: 3rem;
+}
+ul {
+  padding-left: 2em;
+}
+li {
+  margin-bottom: 0.5rem;
+}
 p,
 li {
-  font-weight: 250;
+  font-weight: 200;
 }
 
 h3 {
@@ -34,4 +42,21 @@ h1 {
   margin-top: 0;
   font-weight: bold;
   margin-bottom: 3rem;
+}
+form {
+  margin-top: 5rem;
+}
+.button {
+  padding: 1rem;
+  width: 10rem;
+  border: 0;
+  background-color: #00ffff;
+  color: #191970;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 13rem;
+}
+.button:hover {
+  filter: drop-shadow(1px 1px 20px #00ffff);
 }
