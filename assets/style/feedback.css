@@ -26,6 +26,7 @@ p {
   font-size: 22px;
 }
 input {
+  color: white;
   display: block;
   width: 50%;
   margin-left: auto;
@@ -59,7 +60,19 @@ input {
   margin-top: 1rem;
   padding-inline: 2px;
   cursor: pointer;
+  
+  
 }
+.star:hover{
+  filter: drop-shadow(1px 1px 20px #00ffff);
+}
+
+.colorStar:hover path{
+  fill: #00ffff;
+  
+  transition: filter 0.3s ease;
+}
+
 
 .styleButton {
   padding: 1rem;
@@ -70,6 +83,7 @@ input {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  transition: filter 0.3s ease;
 }
 
 .styleButton:hover {
