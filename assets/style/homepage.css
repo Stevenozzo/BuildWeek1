@@ -11,8 +11,14 @@ img {
   height: auto;
   padding-top: 2.5em;
 }
-h1 {
+h1,
+p,
+span,
+li,
+label {
   color: white;
+}
+h1 {
   margin-bottom: 0;
   font-size: 60px;
 }
