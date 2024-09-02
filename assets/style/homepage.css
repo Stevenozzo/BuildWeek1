@@ -6,11 +6,17 @@ body {
   margin-inline: 8em;
   font-family: "Times New Roman", Times, serif;
 }
-body img {
+img {
   width: 9em;
   height: auto;
   padding-top: 2.5em;
 }
-body h1 {
+h1 {
   color: white;
+  margin-bottom: 0;
+  font-size: 60px;
+}
+.bold {
+  margin-top: 0;
+  font-weight: bold;
 }
