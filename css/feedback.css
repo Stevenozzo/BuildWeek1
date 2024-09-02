@@ -1,0 +1,47 @@
+/*impostazioni generali*/
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+body {
+  background-image: url(../assets/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+  margin-inline: 8em;
+  letter-spacing: 0.5px;
+}
+main {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h3 {
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+p {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+input {
+  display: block;
+  width: 70%;
+  margin-left: 6rem;
+  margin-bottom: 3rem;
+}
+/* impostazioni per classi e id*/
+#logo {
+  width: 15%;
+  margin-top: 20px;
+}
+#title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.star {
+  display: inline-block;
+}
