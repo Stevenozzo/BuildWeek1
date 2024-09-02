@@ -75,3 +75,7 @@ input {
 .styleButton:hover {
   filter: drop-shadow(1px 1px 20px #00ffff);
 }
+
+.selected {
+  color: #00ffff;
+}
