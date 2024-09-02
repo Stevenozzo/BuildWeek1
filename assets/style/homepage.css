@@ -84,7 +84,7 @@ input[type="checkbox"]:checked::after {
   top: 0;
   left: 5px;
   width: 2px;
-  height: 12px;
+  height: 10px;
   border: solid #00ffff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
