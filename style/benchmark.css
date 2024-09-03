@@ -1,33 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 body {
-    color: white;
-    background-image: url("../assets/bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: 5em;
-    font-family: "Outfit", sans-serif;
-  }
-  img {
-    width: 9em;
-    height: auto;
-    padding-top: 2.5em;
-    margin-bottom: 4rem;
-  }
+  color: white;
+  background-image: url("../assets/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 5em;
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+}
+img {
+  width: 9em;
+  height: auto;
+  padding-top: 2.5em;
+  margin-bottom: 4rem;
+}
 
-  .styleButton{
-    color: white;
-    border:none;
-    background-color: transparent;
-    padding-inline: 7em;
-    padding-block: 25px;
-    border-radius: 40px;
-    box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.8),  /* Ombrasfocata interna in alto molto luminosa */
-    inset 0 -4px 8px rgba(0, 0, 0, 0.3);
-
-  }
-  .styleButton:hover{
-    background-color: #BD018C;
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3), 
-    0 -8px 15px rgba(255, 255, 255, 0.3);
-  }
+.styleButton {
+  color: white;
+  border-top: 3px solid rgba(255, 255, 255, 1);
+  border-left: 2.5px solid rgba(255, 255, 255, 1);
+  border-right: 2.5px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  padding-inline: 7em;
+  padding-block: 25px;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.styleButton:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+}
