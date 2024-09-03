@@ -97,7 +97,7 @@ second.appendChild(timerElement);
 
 let questionCount = 0;
 const maxQuestions = 10;
-const timePerQuestion = 10;
+const timePerQuestion = 10; //controllare quando si mette 60s e la durata della linea nel css a 60s i due timer sfalsano
 let countdown;
 
 function startTimer() {

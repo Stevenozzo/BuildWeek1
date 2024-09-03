@@ -47,6 +47,7 @@ h1 {
 .styleButton:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
   background-color: #900080;
+  border-color: #900080;
 }
 
 .boxButton {
@@ -82,7 +83,7 @@ svg {
   position: relative;
   top: 6.3rem;
 }
-circle {
+#colorCircle {
   stroke-dasharray: 360; /* La lunghezza totale della linea */
   stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
   animation: draw 10s linear forwards infinite;
@@ -92,4 +93,9 @@ circle {
   to {
     stroke-dashoffset: 0; /* La linea viene disegnata gradualmente */
   }
+}
+.text-timer{
+  font-size: 12px;
+  font-weight: 200;       
+  margin-block: 3px;
 }
