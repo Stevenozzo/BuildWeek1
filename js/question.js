@@ -84,32 +84,36 @@ const results = [
 let punteggio = 0;
 let boxQuestion = document.querySelector(".boxQuestion");
 let boxAnswer = document.querySelector(".boxButton");
-boxAnswer.classList.add("boxButton");
 let h1domande = document.querySelector("h1");
 
-let domandeRandom = 0;
-const quiz = function () {
-  for (let i = 0; i < results.length; i++) {
-    domandeRandom = Math.floor(Math.random() * results.length);
-    h1domande.innerText = results[domandeRandom].question;
-    boxQuestion.appendChild(h1domande);
+function quiz() {
+  let domandeRandom = Math.floor(Math.random() * results.length);
+  let questionData = results[domandeRandom];
+
+  h1domande.innerText = questionData.question;
+  boxQuestion.innerHTML = "";
+  boxQuestion.appendChild(h1domande);
+
+  let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
+  questionsArray(allAnswers);
+
+  boxAnswer.innerHTML = "";
+  allAnswers.forEach((answer) => {
+    let button = document.createElement("button");
+    button.classList.add("styleButton");
+    button.innerText = answer;
+    button.addEventListener("click", () => {
+      quiz();
+    });
+    boxAnswer.appendChild(button);
+  });
+}
+
+function questionsArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  if (results[domandeRandom].type === "multiple") {
-    let button1 = document.createElement("button");
-    button1.classList.add("styleButton");
-    let button2 = document.createElement("button");
-    button2.classList.add("styleButton");
-    let button3 = document.createElement("button");
-    button3.classList.add("styleButton");
-    let button4 = document.createElement("button");
-    button4.classList.add("styleButton");
-    boxAnswer.append(button1, button2, button3, button4);
-  } else {
-    let button1 = document.createElement("button");
-    button1.classList.add("styleButton");
-    let button2 = document.createElement("button");
-    button2.classList.add("styleButton");
-    boxAnswer.append(button1, button2);
-  }
-};
-console.log(quiz());
+}
+
+quiz();
