@@ -98,9 +98,7 @@ let boxQuestion = document.querySelector(".boxQuestion");
 let boxAnswer = document.querySelector(".boxButton");
 let h1domande = document.querySelector("h1");
 let boxResult = document.querySelector(".buttonResults");
-let timerElement = document.createElement("div");
-timerElement.classList.add("timer");
-boxQuestion.appendChild(timerElement);
+let timerElement = document.querySelector(".timer");
 
 let questionCount = 0;
 const maxQuestions = 10;
@@ -109,11 +107,11 @@ let countdown;
 
 function startTimer() {
   let timeLeft = timePerQuestion;
-  timerElement.innerText = `Tempo rimasto: ${timeLeft}s`;
+  timerElement.innerText = ` ${timeLeft}`;
 
   countdown = setInterval(() => {
     timeLeft--;
-    timerElement.innerText = `Tempo rimasto: ${timeLeft}s`;
+    timerElement.innerText = ` ${timeLeft}`;
 
     if (timeLeft <= 0) {
       clearInterval(countdown);
@@ -152,7 +150,6 @@ function quiz() {
   h1domande.innerText = questionData.question;
   boxQuestion.innerHTML = "";
   boxQuestion.appendChild(h1domande);
-  boxQuestion.appendChild(timerElement);
 
   let allAnswers = [
     questionData.correct_answer,

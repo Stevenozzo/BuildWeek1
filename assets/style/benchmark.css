@@ -40,12 +40,14 @@ h1 {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
   border-radius: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.2) inset;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .styleButton:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(255, 255, 255, 0.3) inset;
   background-color: #900080;
 }
 
