@@ -139,7 +139,7 @@ function quiz() {
           resultButton.classList.add("styleButton");
           resultButton.innerHTML = "Vedi risultati";
           resultButton.addEventListener("click", () => {
-            window.location.href = "results.html";
+            window.location.href = "../Results.html";
           });
           boxResult.appendChild(resultButton);
         }
