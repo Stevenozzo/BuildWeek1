@@ -84,22 +84,32 @@ const results = [
 let punteggio = 0;
 let boxQuestion = document.querySelector(".boxQuestion");
 let boxAnswer = document.querySelector(".boxButton");
+boxAnswer.classList.add("boxButton");
 let h1domande = document.querySelector("h1");
 
 let domandeRandom = 0;
 const quiz = function () {
-  domandeRandom = Math.floor(Math.random() * results.length);
-  h1domande.innerText = results[domandeRandom].question;
-  boxQuestion.appendChild(h1domande);
-
-  let button1 = document.createElement("button");
-  button1.classList.add("styleButton");
-  let button2 = document.createElement("button");
-  button2.classList.add("styleButton");
-  let button3 = document.createElement("button");
-  button3.classList.add("styleButton");
-  let button4 = document.createElement("button");
-  button4.classList.add("styleButton");
-  boxAnswer.append(button1, button2, button3, button4);
+  for (let i = 0; i < results.length; i++) {
+    domandeRandom = Math.floor(Math.random() * results.length);
+    h1domande.innerText = results[domandeRandom].question;
+    boxQuestion.appendChild(h1domande);
+  }
+  if (results[domandeRandom].type === "multiple") {
+    let button1 = document.createElement("button");
+    button1.classList.add("styleButton");
+    let button2 = document.createElement("button");
+    button2.classList.add("styleButton");
+    let button3 = document.createElement("button");
+    button3.classList.add("styleButton");
+    let button4 = document.createElement("button");
+    button4.classList.add("styleButton");
+    boxAnswer.append(button1, button2, button3, button4);
+  } else {
+    let button1 = document.createElement("button");
+    button1.classList.add("styleButton");
+    let button2 = document.createElement("button");
+    button2.classList.add("styleButton");
+    boxAnswer.append(button1, button2);
+  }
 };
 console.log(quiz());

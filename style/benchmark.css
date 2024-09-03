@@ -35,3 +35,9 @@ img {
 .styleButton:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
 }
+.boxButton {
+  margin-inline: 15rem;
+  display: inline-block;
+  margin-top: 2rem;
+  text-align: center;
+}
