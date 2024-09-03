@@ -1,9 +1,17 @@
-// 1) Rendere responsive le stelle
-// const feedbackStars = document.querySelectorAll(".star");
-// const myPath = document.getElementById("color");
+const stars = document.querySelectorAll(".star svg");
 
-// feedbackStars.forEach(function (star) {
-//   star.onclick = function () {
-//     myPath.setAttribute("fill", "#00FFFF");
-//   };
-// });
+function handleStarClick(event) {
+  const value = event.currentTarget.getAttribute("data-value");
+
+  stars.forEach((star) => {
+    if (parseInt(star.getAttribute("data-value")) <= parseInt(value)) {
+      star.querySelector("path").setAttribute("fill", "#00FFFF");
+    } else {
+      star.querySelector("path").setAttribute("fill", "#131d63");
+    }
+  });
+}
+
+stars.forEach((star) => {
+  star.addEventListener("click", handleStarClick);
+});

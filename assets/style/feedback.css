@@ -60,19 +60,15 @@ input {
   margin-top: 1rem;
   padding-inline: 2px;
   cursor: pointer;
-  
-  
 }
-.star:hover{
+.star:hover {
   filter: drop-shadow(1px 1px 20px #00ffff);
   transition: filter 0.3s ease;
 }
 
-.colorStar:hover path{
+.colorStar:hover path {
   fill: #00ffff;
- 
 }
-
 
 .styleButton {
   padding: 1rem;
@@ -88,8 +84,4 @@ input {
 
 .styleButton:hover {
   filter: drop-shadow(1px 1px 20px #00ffff);
-}
-
-.selected {
-  color: #00ffff;
 }
