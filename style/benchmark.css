@@ -15,8 +15,11 @@ img {
   padding-top: 2.5em;
   margin-bottom: 4rem;
 }
-
+main{
+  text-align: center;
+}
 .styleButton {
+  margin:13px;
   color: white;
   border-top: 3px solid rgba(255, 255, 255, 1);
   border-left: 2.5px solid rgba(255, 255, 255, 1);
@@ -36,8 +39,8 @@ img {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
 }
 .boxButton {
-  margin-inline: 15rem;
+  margin-inline: 25rem;
   display: inline-block;
   margin-top: 2rem;
-  text-align: center;
+  
 }
