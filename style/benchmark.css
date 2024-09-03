@@ -18,10 +18,19 @@ img {
 main {
   text-align: center;
 }
+h1 {
+  font-size: 36px;
+}
+
+.boxQuestion {
+  margin-inline: 20rem;
+  margin-top: 5rem;
+}
 .styleButton {
+  height: 5rem;
   text-align: center;
-  width: 10rem;
-  padding: 1em;
+  width: 24rem;
+
   margin: 13px;
   color: white;
   border-top: 3px solid rgba(255, 255, 255, 1);
@@ -30,19 +39,19 @@ main {
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   background-color: transparent;
   font-family: "Outfit", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.2) inset;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .styleButton:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(255, 255, 255, 0.3) inset;
 }
 .boxButton {
-  margin-inline: 25rem;
+  margin-inline: 13rem;
   display: inline-block;
   margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
 }
