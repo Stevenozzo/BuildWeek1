@@ -19,18 +19,17 @@ main {
   text-align: center;
 }
 h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .boxQuestion {
-  margin-inline: 20rem;
+  margin-inline: 25rem;
   margin-top: 5rem;
 }
 .styleButton {
   height: 5rem;
   text-align: center;
   width: 24rem;
-
   margin: 13px;
   color: white;
   border-top: 3px solid rgba(255, 255, 255, 1);
@@ -41,17 +40,17 @@ h1 {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
   border-radius: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-    0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .styleButton:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
-    0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  background-color: #900080;
 }
+
 .boxButton {
-  margin-inline: 13rem;
+  margin-inline: 21rem;
   display: inline-block;
   margin-top: 2rem;
 }

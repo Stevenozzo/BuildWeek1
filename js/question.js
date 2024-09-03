@@ -11,8 +11,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     incorrect_answers: [".png", ".jpeg", ".gif"],
   },
@@ -20,8 +19,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer language would you associate Django framework with?",
+    question: "Which computer language would you associate Django framework with?",
     correct_answer: "Python",
     incorrect_answers: ["C#", "C++", "Java"],
   },
@@ -29,8 +27,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
+    question: "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -38,8 +35,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The Python programming language gets its name from the British comedy group Monty Python.",
+    question: "The Python programming language gets its name from the British comedy group Monty Python.",
     correct_answer: "True",
     incorrect_answers: ["False"],
   },
@@ -47,8 +43,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "In any programming language, what is the most common way to iterate through an array?",
+    question: "In any programming language, what is the most common way to iterate through an array?",
     correct_answer: "For loops",
     incorrect_answers: ["If Statements", "Do-while loops", "While loops"],
   },
@@ -56,8 +51,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The programming language Python is based off a modified version of JavaScript.",
+    question: "The programming language Python is based off a modified version of JavaScript.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -65,8 +59,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
+    question: "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
@@ -74,14 +67,9 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer hardware device provides an interface for all other connected devices to communicate?",
+    question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
     correct_answer: "Motherboard",
-    incorrect_answers: [
-      "Central Processing Unit",
-      "Hard Disk Drive",
-      "Random Access Memory",
-    ],
+    incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
   },
   {
     type: "multiple",
@@ -100,16 +88,14 @@ let h1domande = document.querySelector("h1");
 
 function quiz() {
   let domandeRandom = Math.floor(Math.random() * results.length);
+
   let questionData = results[domandeRandom];
 
   h1domande.innerText = questionData.question;
   boxQuestion.innerHTML = "";
   boxQuestion.appendChild(h1domande);
 
-  let allAnswers = [
-    questionData.correct_answer,
-    ...questionData.incorrect_answers,
-  ];
+  let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
   questionsArray(allAnswers);
 
   boxAnswer.innerHTML = "";
@@ -120,6 +106,7 @@ function quiz() {
     button.addEventListener("click", () => {
       quiz();
     });
+
     boxAnswer.appendChild(button);
   });
 }
