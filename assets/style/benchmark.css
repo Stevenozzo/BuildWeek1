@@ -63,9 +63,11 @@ header {
 .timer {
   padding-bottom: 25px;
   text-align: center;
+  position: relative;
+  bottom: 5rem;
 }
 .second {
-  font-size: 30px;
+  font-size: 25px;
 }
 footer {
   display: flex;
@@ -75,4 +77,19 @@ footer {
 }
 footer span {
   color: #900080;
+}
+svg {
+  position: relative;
+  top: 6.3rem;
+}
+circle {
+  stroke-dasharray: 360; /* La lunghezza totale della linea */
+  stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
+  animation: draw 10s linear forwards infinite;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* La linea viene disegnata gradualmente */
+  }
 }
