@@ -98,6 +98,7 @@ let boxQuestion = document.querySelector(".boxQuestion");
 let boxAnswer = document.querySelector(".boxButton");
 let h1domande = document.querySelector("h1");
 let boxResult = document.querySelector(".buttonResults");
+let questionString = document.querySelector(".domande");
 
 let tempoProva = document.querySelector(".timer");
 let timerElement = document.createElement("p");
@@ -106,7 +107,7 @@ second.appendChild(timerElement);
 
 let questionCount = 0;
 const maxQuestions = 10;
-const timePerQuestion = 60;
+const timePerQuestion = 10;
 let countdown;
 
 function startTimer() {
