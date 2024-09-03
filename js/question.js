@@ -98,9 +98,45 @@ let boxQuestion = document.querySelector(".boxQuestion");
 let boxAnswer = document.querySelector(".boxButton");
 let h1domande = document.querySelector("h1");
 let boxResult = document.querySelector(".buttonResults");
+let timerElement = document.createElement("div");
+timerElement.classList.add("timer");
+boxQuestion.appendChild(timerElement);
 
 let questionCount = 0;
 const maxQuestions = 10;
+const timePerQuestion = 60;
+let countdown;
+
+function startTimer() {
+  let timeLeft = timePerQuestion;
+  timerElement.innerText = `Tempo rimasto: ${timeLeft}s`;
+
+  countdown = setInterval(() => {
+    timeLeft--;
+    timerElement.innerText = `Tempo rimasto: ${timeLeft}s`;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      if (questionCount < maxQuestions) {
+        quiz();
+      } else {
+        showResultsButton();
+      }
+    }
+  }, 1000);
+}
+
+function showResultsButton() {
+  if (!document.querySelector(".buttonResults button")) {
+    let resultButton = document.createElement("button");
+    resultButton.classList.add("styleButton");
+    resultButton.innerHTML = "Vedi risultati";
+    resultButton.addEventListener("click", () => {
+      window.location.href = "../Results.html";
+    });
+    boxResult.appendChild(resultButton);
+  }
+}
 
 function quiz() {
   if (questionCount >= maxQuestions) {
@@ -108,6 +144,7 @@ function quiz() {
   }
 
   questionCount++;
+  clearInterval(countdown);
 
   let domandeRandom = Math.floor(Math.random() * results.length);
   let questionData = results[domandeRandom];
@@ -115,6 +152,7 @@ function quiz() {
   h1domande.innerText = questionData.question;
   boxQuestion.innerHTML = "";
   boxQuestion.appendChild(h1domande);
+  boxQuestion.appendChild(timerElement);
 
   let allAnswers = [
     questionData.correct_answer,
@@ -128,25 +166,20 @@ function quiz() {
     button.classList.add("styleButton");
     button.innerText = answer;
     button.addEventListener("click", () => {
+      clearInterval(countdown);
       if (answer === questionData.correct_answer) {
         punteggio++;
       }
       if (questionCount < maxQuestions) {
         quiz();
       } else {
-        if (!document.querySelector(".buttonResults button")) {
-          let resultButton = document.createElement("button");
-          resultButton.classList.add("styleButton");
-          resultButton.innerHTML = "Vedi risultati";
-          resultButton.addEventListener("click", () => {
-            window.location.href = "../Results.html";
-          });
-          boxResult.appendChild(resultButton);
-        }
+        showResultsButton();
       }
     });
     boxAnswer.appendChild(button);
   });
+
+  startTimer();
 }
 
 function questionsArray(array) {
