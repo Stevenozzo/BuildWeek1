@@ -67,3 +67,12 @@ header {
 .second {
   font-size: 30px;
 }
+footer {
+  display: flex;
+  text-align: center;
+  margin-left: 53em;
+  padding-top: 5em;
+}
+footer span {
+  color: #900080;
+}
