@@ -2,3 +2,55 @@
 
 console.log(punteggioSalvato);
 */
+let conteinerAll = document.querySelector(".container-all");
+let questionCorrect = document.querySelector(".correct");
+let cicrcle = document.querySelector(".cicrcle");
+let questionWrong = document.querySelector(".wrong");
+
+let punteggioFake = 2;
+let totaleDomande = 10;
+let punteggioSbagliatoFake = totaleDomande - punteggioFake;
+let percentualeCorretta = 0;
+let percentualeSbagliata = 0;
+
+const calcoloPercentuale = function () {
+  percentualeCorretta = (punteggioFake / totaleDomande) * 100;
+  percentualeSbagliata = 100 - percentualeCorretta;
+  if (percentualeCorretta >= 51) {
+    let h2 = document.createElement("h2");
+    h2.innerText = "Congratulations!";
+    let h3 = document.createElement("h3");
+    h3.innerText = "You passed the exam.";
+    h3.classList.add("h3");
+    let pargagrafoCerchio = document.querySelector("p");
+    pargagrafoCerchio.innerText = `We'll send the certificate
+   in few minutes.
+   Chech your email (including
+    promotions/spam folder)`;
+    cicrcle.append(h2, h3, pargagrafoCerchio);
+  } else {
+    let h2 = document.createElement("h2");
+    h2.innerText = "We are sorry";
+    let h3 = document.createElement("h3");
+    h3.innerText = "You did not pass the exam.";
+    h3.classList.add("notPassed");
+    let pargagrafoCerchio = document.querySelector("p");
+    pargagrafoCerchio.innerText = `you will be able
+     to retake the
+      exam next week`;
+    cicrcle.append(h2, h3, pargagrafoCerchio);
+  }
+  let testoDomandeCorrette = document.createElement("p");
+  testoDomandeCorrette.innerText = `Correct
+${percentualeCorretta}%
+${punteggioFake}/10`;
+  questionCorrect.appendChild(testoDomandeCorrette);
+
+  let testoErrori = document.createElement("p");
+  testoErrori.innerText = `Wrong
+  ${percentualeSbagliata}%
+  ${punteggioSbagliatoFake}/10`;
+  questionWrong.appendChild(testoErrori);
+};
+
+console.log(calcoloPercentuale());
