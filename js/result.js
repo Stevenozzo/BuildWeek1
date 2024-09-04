@@ -48,17 +48,24 @@ const calcoloPercentuale = function () {
     containerText.append(h2, h3, paragrafoCerchio);
     cicrcle.appendChild(containerText);
   }
-  let testoDomandeCorrette = document.createElement("p");
-  testoDomandeCorrette.innerText = `Correct
-${percentualeCorretta}%
-${punteggioFake}/10`;
-  questionCorrect.appendChild(testoDomandeCorrette);
+  let testoCorrect = document.createElement("p");
 
+  testoCorrect.innerText = "Correct";
+  let percent = document.createElement("p");
+  percent.classList.add("percent");
+  percent.innerText = `${percentualeCorretta}%`;
+  let numeroRisposte = document.createElement("p");
+  numeroRisposte.classList.add("numRisposte");
+  numeroRisposte.innerText = `${punteggioFake}/10 questions`;
+  questionCorrect.append(testoCorrect, percent, numeroRisposte);
   let testoErrori = document.createElement("p");
-  testoErrori.innerText = `Wrong
-  ${percentualeSbagliata}%
-  ${punteggioSbagliatoFake}/10`;
-  questionWrong.appendChild(testoErrori);
+  testoErrori.innerText = "Wrong";
+  let percent2 = document.createElement("p");
+  percent2.classList.add("percent");
+  percent2.innerText = `${percentualeSbagliata}%`;
+  let numeroRisposte2 = document.createElement("p");
+  numeroRisposte2.innerText = `${punteggioSbagliatoFake}/10 questions`;
+  numeroRisposte2.classList.add("numRisposte");
+  questionWrong.append(testoErrori, percent2, numeroRisposte2);
 };
-
 console.log(calcoloPercentuale());

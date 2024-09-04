@@ -48,6 +48,7 @@ main {
 }
 .passed {
   color: #00ffff;
+  margin-bottom: 10px;
 }
 .notPassed {
   color: red;
@@ -88,4 +89,15 @@ main {
   transition: stroke-dasharray 0.5s ease, stroke 0.5s ease;
   stroke: #00ffff;
   stroke-dasharray: 0, 1000;
+}
+.percent {
+  font-weight: bold;
+}
+.numRisposte {
+  font-weight: 200;
+  font-size: 15px;
+  padding-right: 60px;
+  display: flex;
+  width: 10em;
+  margin-left: 10px;
 }
