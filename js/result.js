@@ -17,17 +17,17 @@ let colorCircle = document.querySelector(".colorCircle");
 const calcoloPercentuale = function () {
   percentualeCorretta = (punteggioSalvato / totaleDomande) * 100;
   percentualeSbagliata = 100 - percentualeCorretta;
-  
-  //calcolo della circonferenza 
+
+  //calcolo della circonferenza
   let circumference = 2 * Math.PI * 160;
-  
+
   //calcolo percentuale di riempimento del colore (blu è quello variabile)
-  let offset = circumference - (percentualeCorretta / 100) * circumference; 
+  let offset = circumference - (percentualeCorretta / 100) * circumference;
   colorCircle.style.strokeDasharray = `${
     circumference - offset
   } ${circumference}`;
 
-  //testo all'interno del grafico 
+  //testo all'interno del grafico
   if (percentualeCorretta >= 51) {
     let h2 = document.createElement("h2");
     h2.innerText = "Congratulations!";
@@ -57,7 +57,7 @@ const calcoloPercentuale = function () {
     cicrcle.appendChild(containerText);
   }
 
-//stampa risultati corretti su 10 domande
+  //stampa risultati corretti su 10 domande
   let testoCorrect = document.createElement("p");
 
   testoCorrect.innerText = "Correct";
@@ -69,8 +69,7 @@ const calcoloPercentuale = function () {
   numeroRisposte.innerText = `${punteggioSalvato}/10 questions`;
   questionCorrect.append(testoCorrect, percent, numeroRisposte);
 
-
-//stampa risultati errati su 10 domande 
+  //stampa risultati errati su 10 domande
   let testoErrori = document.createElement("p");
   testoErrori.innerText = "Wrong";
   let percent2 = document.createElement("p");
@@ -82,3 +81,9 @@ const calcoloPercentuale = function () {
   questionWrong.append(testoErrori, percent2, numeroRisposte2);
 };
 calcoloPercentuale();
+
+let button = document.querySelector(".rate-btn");
+button.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = "../Feedbackpage.html";
+});
