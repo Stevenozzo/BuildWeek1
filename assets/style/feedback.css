@@ -49,6 +49,7 @@ p {
   padding-top: 2.5em;
   margin-bottom: 4rem;
   margin-left: 9em;
+  cursor: pointer;
 }
 #title {
   font-size: 2.5rem;
