@@ -182,6 +182,7 @@ function quiz() {
 
         if (answer === questionData.correct_answer) {
           punteggio++;
+          localStorage.setItem("punteggio", punteggio);
         }
 
         if (questionCount < maxQuestions) {
