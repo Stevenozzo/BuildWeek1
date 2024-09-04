@@ -7,15 +7,19 @@ let questionCorrect = document.querySelector(".correct");
 let cicrcle = document.querySelector(".cicrcle");
 let questionWrong = document.querySelector(".wrong");
 let containerText = document.querySelector(".containerText");
-let punteggioFake = 2;
+let punteggioFake = 8;
 let totaleDomande = 10;
 let punteggioSbagliatoFake = totaleDomande - punteggioFake;
 let percentualeCorretta = 0;
 let percentualeSbagliata = 0;
-
+let colorCircle = document.querySelector(".colorCircle");
 const calcoloPercentuale = function () {
   percentualeCorretta = (punteggioFake / totaleDomande) * 100;
   percentualeSbagliata = 100 - percentualeCorretta;
+  let circumference = 2 * Math.PI * 160;
+  let offset = circumference - (percentualeCorretta / 100) * circumference;
+
+  colorCircle.style.strokeDasharray = `${circumference - offset} ${circumference}`;
   if (percentualeCorretta >= 51) {
     let h2 = document.createElement("h2");
     h2.innerText = "Congratulations!";
@@ -40,7 +44,7 @@ const calcoloPercentuale = function () {
     paragrafoCerchio.innerText = `you will be able
      to retake the
      exam next week`;
-     paragrafoCerchio.classList.add("paragrafoCerchio");
+    paragrafoCerchio.classList.add("paragrafoCerchio");
     containerText.append(h2, h3, paragrafoCerchio);
     cicrcle.appendChild(containerText);
   }
