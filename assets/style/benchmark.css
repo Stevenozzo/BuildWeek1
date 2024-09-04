@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+body {
+  color: white;
+  background-image: url("../bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-inline: 5em;
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+}
+img {
+  width: 11em;
+  height: auto;
+  padding-top: 2.5em;
+  margin-bottom: 7rem;
+}
+main {
+  text-align: center;
+}
+h1 {
+  font-size: 30px;
+}
+
+.boxQuestion {
+  margin-inline: 25rem;
+  margin-top: 5rem;
+}
+.styleButton {
+  height: 5rem;
+  text-align: center;
+  width: 24rem;
+  margin: 13px;
+  color: white;
+  border-top: 3px solid rgba(255, 255, 255, 1);
+  border-left: 2.5px solid rgba(255, 255, 255, 1);
+  border-right: 2.5px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.styleButton:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  background-color: #900080;
+  border-color: #900080;
+}
+
+.boxButton {
+  margin-inline: 21rem;
+  display: inline-block;
+  margin-top: 2rem;
+}
+header {
+  margin-inline: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.timer {
+  padding-bottom: 25px;
+  text-align: center;
+  position: relative;
+  bottom: 5rem;
+}
+.second {
+  font-size: 25px;
+}
+footer {
+  display: flex;
+  text-align: center;
+  margin-left: 53em;
+  padding-top: 5em;
+}
+footer span {
+  color: #900080;
+}
+svg {
+  position: relative;
+  top: 6.3rem;
+}
+.colorCircle {
+  stroke-dasharray: 360; /* La lunghezza totale della linea */
+  stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
+  animation: draw 60s linear forwards infinite;
+  stroke: #00ffff;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* La linea viene disegnata gradualmente */
+  }
+}
+
+.text-timer {
+  font-size: 12px;
+  font-weight: 200;
+  margin-block: 3px;
+}

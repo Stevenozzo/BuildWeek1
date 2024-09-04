@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benchmark Page</title>
+    <link rel="stylesheet" href="./assets/style/reset.css" />
+    <link rel="stylesheet" href="./assets/style/benchmark.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/epicode_logo.png" alt="Logo" />
+
+      <div class="timer">
+        <svg width="130" height="130">
+          <circle cx="65" cy="65" r="55" stroke="rgba(211, 211, 211, 0.2)" stroke-width="13" fill="none" />
+          <circle class="colorCircle" cx="65" cy="65" r="55" stroke="" stroke-width="13" fill="none" transform="rotate(270 65 65)" />
+        </svg>
+        <div class="text-timer">Seconds</div>
+        <div class="second"></div>
+        <div class="text-timer">Remainings</div>
+      </div>
+    </header>
+    <main>
+      <div class="boxQuestion">
+        <h1></h1>
+      </div>
+      <div class="boxButton"></div>
+      <div class="buttonResults"></div>
+    </main>
+    <footer>
+      <div class="domande">
+        <p class="counterQuestion"></p>
+      </div>
+    </footer>
+    <script src="./js/question.js"></script>
+  </body>
+</html>
