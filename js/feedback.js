@@ -53,3 +53,8 @@ button.addEventListener("click", function (event) {
   }
   areaTesto.value = "";
 });
+
+const home = document.getElementById("logo");
+home.addEventListener("click", (event) => {
+  window.location.href = "../homepage.html";
+});
