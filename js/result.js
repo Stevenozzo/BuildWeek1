@@ -1,3 +1,4 @@
-const punteggioSalvato = localStorage.getItem("punteggio");
+/*const punteggioSalvato = localStorage.getItem("punteggio");
 
 console.log(punteggioSalvato);
+*/
