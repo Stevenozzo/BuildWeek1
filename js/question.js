@@ -179,13 +179,11 @@ function quiz() {
       void circle.offsetWidth;
       setTimeout(() => {
         circle.classList.add("colorCircle");
-    
-        
+
         if (answer === questionData.correct_answer) {
           punteggio++;
         }
-    
-        
+
         if (questionCount < maxQuestions) {
           quiz();
         } else {
@@ -193,7 +191,7 @@ function quiz() {
         }
       }, 50); // Aggiungi un ritardo di 50 millisecondi
     });
-    
+
     boxAnswer.appendChild(button);
   });
 
@@ -216,3 +214,5 @@ function questionsArray(array) {
 }
 
 quiz();
+
+export { punteggio };
