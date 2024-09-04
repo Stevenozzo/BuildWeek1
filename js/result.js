@@ -1,25 +1,23 @@
-/*const punteggioSalvato = localStorage.getItem("punteggio");
-
-console.log(punteggioSalvato);
-*/
+const punteggioSalvato = localStorage.getItem("punteggio");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
 let cicrcle = document.querySelector(".cicrcle");
 let questionWrong = document.querySelector(".wrong");
 let containerText = document.querySelector(".containerText");
-let punteggioFake = 8;
 let totaleDomande = 10;
-let punteggioSbagliatoFake = totaleDomande - punteggioFake;
+let punteggioSbagliato = totaleDomande - punteggioSalvato;
 let percentualeCorretta = 0;
 let percentualeSbagliata = 0;
 let colorCircle = document.querySelector(".colorCircle");
 const calcoloPercentuale = function () {
-  percentualeCorretta = (punteggioFake / totaleDomande) * 100;
+  percentualeCorretta = (punteggioSalvato / totaleDomande) * 100;
   percentualeSbagliata = 100 - percentualeCorretta;
   let circumference = 2 * Math.PI * 160;
   let offset = circumference - (percentualeCorretta / 100) * circumference;
 
-  colorCircle.style.strokeDasharray = `${circumference - offset} ${circumference}`;
+  colorCircle.style.strokeDasharray = `${
+    circumference - offset
+  } ${circumference}`;
   if (percentualeCorretta >= 51) {
     let h2 = document.createElement("h2");
     h2.innerText = "Congratulations!";
@@ -56,7 +54,7 @@ const calcoloPercentuale = function () {
   percent.innerText = `${percentualeCorretta}%`;
   let numeroRisposte = document.createElement("p");
   numeroRisposte.classList.add("numRisposte");
-  numeroRisposte.innerText = `${punteggioFake}/10 questions`;
+  numeroRisposte.innerText = `${punteggioSalvato}/10 questions`;
   questionCorrect.append(testoCorrect, percent, numeroRisposte);
   let testoErrori = document.createElement("p");
   testoErrori.innerText = "Wrong";
@@ -64,7 +62,7 @@ const calcoloPercentuale = function () {
   percent2.classList.add("percent");
   percent2.innerText = `${percentualeSbagliata}%`;
   let numeroRisposte2 = document.createElement("p");
-  numeroRisposte2.innerText = `${punteggioSbagliatoFake}/10 questions`;
+  numeroRisposte2.innerText = `${punteggioSbagliato}/10 questions`;
   numeroRisposte2.classList.add("numRisposte");
   questionWrong.append(testoErrori, percent2, numeroRisposte2);
 };
