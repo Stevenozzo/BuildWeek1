@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <link rel="stylesheet" href="./assets/style/reset.css" />
+    <link rel="stylesheet" href="./assets/style/result.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/epicode_logo.png" alt="LOGO EPICODE" />
+    </header>
+    <main>
+      <div class="results">
+        <h1>Results</h1>
+        <p>The summary of your answers:</p>
+      </div>
+
+      <div class="container-all">
+        <div class="correct"></div>
+
+        <div class="cicrcle">
+          <svg width="400" height="400">
+            <circle cx="200" cy="200" r="160" stroke="#900080" stroke-width="50" fill="none" />
+
+            <circle class="colorCircle" cx="200" cy="200" r="160" stroke="" stroke-width="50" fill="none" />
+          </svg>
+
+          <div class="containerText"></div>
+        </div>
+
+        <div class="wrong"></div>
+      </div>
+
+      <button class="rate-btn">RATE US</button>
+    </main>
+    <script src="./js/result.js"></script>
+  </body>
+</html>
