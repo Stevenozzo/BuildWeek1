@@ -89,7 +89,7 @@ svg {
 .colorCircle {
   stroke-dasharray: 360; /* La lunghezza totale della linea */
   stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
-  animation: draw 10s linear forwards infinite;
+  animation: draw 60s linear forwards infinite;
   stroke: #00ffff;
 }
 @keyframes draw {

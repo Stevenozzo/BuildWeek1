@@ -111,7 +111,7 @@ let circle = document.querySelector(".colorCircle");
 
 let questionCount = 0;
 const maxQuestions = 10;
-const timePerQuestion = 10;
+const timePerQuestion = 60;
 let countdown;
 
 function startTimer() {
