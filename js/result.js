@@ -1,2 +1,3 @@
-import { punteggio } from "./question.js";
-console.log(punteggio);
+const punteggioSalvato = localStorage.getItem("punteggio");
+
+console.log(punteggioSalvato);
