@@ -189,7 +189,7 @@ function quiz() {
         } else {
           showResultsButton();
         }
-      }, 50); // Aggiungi un ritardo di 50 millisecondi
+      }, 50);
     });
 
     boxAnswer.appendChild(button);
@@ -214,5 +214,3 @@ function questionsArray(array) {
 }
 
 quiz();
-
-export { punteggio };
