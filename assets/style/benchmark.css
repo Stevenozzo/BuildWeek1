@@ -40,12 +40,14 @@ h1 {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
   border-radius: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.2) inset;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .styleButton:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(255, 255, 255, 0.3) inset;
   background-color: #900080;
   border-color: #900080;
 }
@@ -88,7 +90,7 @@ svg {
   stroke-dasharray: 360; /* La lunghezza totale della linea */
   stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
   animation: draw 10s linear forwards infinite;
-  stroke:#00FFFF;
+  stroke: #00ffff;
 }
 @keyframes draw {
   to {
@@ -96,9 +98,8 @@ svg {
   }
 }
 
-
-.text-timer{
+.text-timer {
   font-size: 12px;
-  font-weight: 200;       
+  font-weight: 200;
   margin-block: 3px;
 }

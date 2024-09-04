@@ -129,6 +129,7 @@ function startTimer() {
       if (questionCount < maxQuestions) {
         quiz();
       } else {
+        tempoProva.innerHTML = "";
         showResultsButton();
       }
     }
@@ -148,7 +149,7 @@ function showResultsButton() {
 }
 
 function quiz() {
-  if (questionCount >= maxQuestions) {
+  if (questionCount >= maxQuestions || results.length === 0) {
     return;
   }
 
@@ -157,6 +158,7 @@ function quiz() {
 
   let domandeRandom = Math.floor(Math.random() * results.length);
   let questionData = results[domandeRandom];
+  results.splice(domandeRandom, 1);
 
   h1domande.innerText = questionData.question;
   boxQuestion.innerHTML = "";
@@ -188,6 +190,7 @@ function quiz() {
         if (questionCount < maxQuestions) {
           quiz();
         } else {
+          tempoProva.innerHTML = "";
           showResultsButton();
         }
       }, 50);
