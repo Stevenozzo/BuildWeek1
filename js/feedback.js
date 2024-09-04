@@ -41,8 +41,10 @@ button.addEventListener("click", function (event) {
 
   if (valutazione <= 6) {
     h2.innerText = "Scusaci miglioreremo...😢🥹";
+    h2.classList.add("h2");
   } else {
     h2.innerText = "Grazie mille 😊😁";
+    h2.classList.add("h2");
   }
 
   if (!footer.contains(h2)) {

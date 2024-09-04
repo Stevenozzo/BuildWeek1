@@ -85,3 +85,8 @@ input {
 .styleButton:hover {
   filter: drop-shadow(1px 1px 20px #00ffff);
 }
+h2 {
+  text-align: center;
+  margin-top: 4em;
+  font-size: 30px;
+}
