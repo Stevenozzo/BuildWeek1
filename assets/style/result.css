@@ -83,7 +83,7 @@ main {
 }
 
 .wrong {
-  color: rgba(218, 216, 216, 0.774);
+  color: white;
 }
 .colorCircle {
   transition: stroke-dasharray 0.5s ease, stroke 0.5s ease;

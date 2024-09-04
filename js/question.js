@@ -109,11 +109,19 @@ second.appendChild(timerElement);
 
 let circle = document.querySelector(".colorCircle");
 
+//contatore per le domande che si incrementa 
 let questionCount = 0;
-const maxQuestions = 10;
-const timePerQuestion = 60;
-let countdown;
 
+//numero di odmande massime nell'array
+const maxQuestions = 10;
+
+//timer per le domande 
+const timePerQuestion = 60;
+
+
+
+//funzione per il timer
+let countdown;
 function startTimer() {
   let timeLeft = timePerQuestion;
 
@@ -125,24 +133,25 @@ function startTimer() {
     timerElement.innerText = ` ${timeLeft}`;
 
     if (timeLeft <= 0) {
-      clearInterval(countdown);
+      clearInterval(countdown); // clearInterval(countdown) serve a resettare il timer e a farlo ripartire
       if (questionCount < maxQuestions) {
         quiz();
       } else {
-        tempoProva.innerHTML = "";
+        tempoProva.innerHTML = ""; //serve a rimuovere il timer quando si risponde all'ultima domanda
         showResultsButton();
       }
     }
-  }, 1000);
+  }, 1000); 
 }
 
+//funzione che fa apparire il bottone per vedere i risultati
 function showResultsButton() {
   if (!document.querySelector(".buttonResults button")) {
     let resultButton = document.createElement("button");
     resultButton.classList.add("styleButton");
     resultButton.innerHTML = "Vedi risultati";
     resultButton.addEventListener("click", () => {
-      window.location.href = "../Results.html";
+      window.location.href = "../Results.html";       //link che ci porta all'html del result page
     });
     boxResult.appendChild(resultButton);
   }

@@ -82,6 +82,7 @@ const calcoloPercentuale = function () {
 };
 calcoloPercentuale();
 
+//evento bottone che ci porta al feedback
 let button = document.querySelector(".rate-btn");
 button.addEventListener("click", (event) => {
   event.preventDefault();
