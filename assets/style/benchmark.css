@@ -74,9 +74,8 @@ header {
   font-size: 25px;
 }
 footer {
-  display: flex;
-  text-align: center;
-  margin-left: 53em;
+  justify-content: center;
+  display: flex;  
   padding-top: 5em;
 }
 footer span {
@@ -89,7 +88,7 @@ svg {
 .colorCircle {
   stroke-dasharray: 360; /* La lunghezza totale della linea */
   stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
-  animation: draw 60s linear forwards infinite;
+  animation: draw 61s linear forwards infinite;
   stroke: #00ffff;
 }
 @keyframes draw {
