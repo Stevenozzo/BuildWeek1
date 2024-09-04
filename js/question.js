@@ -107,6 +107,8 @@ let timerElement = document.createElement("p");
 let second = document.querySelector(".second");
 second.appendChild(timerElement);
 
+let circle = document.querySelector(".colorCircle");
+
 let questionCount = 0;
 const maxQuestions = 10;
 const timePerQuestion = 10;
@@ -173,15 +175,25 @@ function quiz() {
     button.innerText = answer;
     button.addEventListener("click", () => {
       clearInterval(countdown);
-      if (answer === questionData.correct_answer) {
-        punteggio++;
-      }
-      if (questionCount < maxQuestions) {
-        quiz();
-      } else {
-        showResultsButton();
-      }
+      circle.classList.remove("colorCircle");
+      void circle.offsetWidth;
+      setTimeout(() => {
+        circle.classList.add("colorCircle");
+    
+        
+        if (answer === questionData.correct_answer) {
+          punteggio++;
+        }
+    
+        
+        if (questionCount < maxQuestions) {
+          quiz();
+        } else {
+          showResultsButton();
+        }
+      }, 50); // Aggiungi un ritardo di 50 millisecondi
     });
+    
     boxAnswer.appendChild(button);
   });
 

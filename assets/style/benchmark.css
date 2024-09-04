@@ -5,15 +5,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-left: 5em;
+  margin-inline: 5em;
   font-family: "Outfit", sans-serif;
   height: 100vh;
 }
 img {
-  width: 9em;
+  width: 11em;
   height: auto;
   padding-top: 2.5em;
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 }
 main {
   text-align: center;
@@ -56,9 +56,10 @@ h1 {
   margin-top: 2rem;
 }
 header {
+  margin-inline: 12rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 3rem;
 }
 .timer {
@@ -83,17 +84,19 @@ svg {
   position: relative;
   top: 6.3rem;
 }
-#colorCircle {
+.colorCircle {
   stroke-dasharray: 360; /* La lunghezza totale della linea */
   stroke-dashoffset: 360; /* Nasconde la linea inizialmente */
   animation: draw 10s linear forwards infinite;
+  stroke:#00FFFF;
 }
-
 @keyframes draw {
   to {
     stroke-dashoffset: 0; /* La linea viene disegnata gradualmente */
   }
 }
+
+
 .text-timer{
   font-size: 12px;
   font-weight: 200;       
