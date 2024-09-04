@@ -6,7 +6,7 @@ let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
 let cicrcle = document.querySelector(".cicrcle");
 let questionWrong = document.querySelector(".wrong");
-
+let containerText = document.querySelector(".containerText");
 let punteggioFake = 2;
 let totaleDomande = 10;
 let punteggioSbagliatoFake = totaleDomande - punteggioFake;
@@ -21,24 +21,28 @@ const calcoloPercentuale = function () {
     h2.innerText = "Congratulations!";
     let h3 = document.createElement("h3");
     h3.innerText = "You passed the exam.";
-    h3.classList.add("h3");
-    let pargagrafoCerchio = document.querySelector("p");
-    pargagrafoCerchio.innerText = `We'll send the certificate
+    h3.classList.add("passed");
+    let paragrafoCerchio = document.createElement("p");
+    paragrafoCerchio.innerText = `We'll send the certificate    
    in few minutes.
    Chech your email (including
     promotions/spam folder)`;
-    cicrcle.append(h2, h3, pargagrafoCerchio);
+    paragrafoCerchio.classList.add("paragrafoCerchio");
+    containerText.append(h2, h3, paragrafoCerchio);
+    cicrcle.appendChild(containerText);
   } else {
     let h2 = document.createElement("h2");
     h2.innerText = "We are sorry";
     let h3 = document.createElement("h3");
     h3.innerText = "You did not pass the exam.";
     h3.classList.add("notPassed");
-    let pargagrafoCerchio = document.querySelector("p");
-    pargagrafoCerchio.innerText = `you will be able
+    let paragrafoCerchio = document.createElement("p");
+    paragrafoCerchio.innerText = `you will be able
      to retake the
-      exam next week`;
-    cicrcle.append(h2, h3, pargagrafoCerchio);
+     exam next week`;
+     paragrafoCerchio.classList.add("paragrafoCerchio");
+    containerText.append(h2, h3, paragrafoCerchio);
+    cicrcle.appendChild(containerText);
   }
   let testoDomandeCorrette = document.createElement("p");
   testoDomandeCorrette.innerText = `Correct
