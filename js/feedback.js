@@ -36,6 +36,7 @@ let button = document.querySelector(".styleButton");
 let footer = document.querySelector("footer");
 let h2 = document.querySelector("h2");
 
+let areaTesto = document.querySelector(".textArea");
 button.addEventListener("click", function (event) {
   const value = parseInt(event.currentTarget.getAttribute("data-value"));
 
@@ -48,6 +49,7 @@ button.addEventListener("click", function (event) {
   }
 
   if (!footer.contains(h2)) {
-    footer.appendChild(h2); // Aggiungi l'elemento h2 al footer, solo se non è già presente
+    footer.appendChild(h2);
   }
+  areaTesto.value = "";
 });

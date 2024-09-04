@@ -1,4 +1,5 @@
 const punteggioSalvato = localStorage.getItem("punteggio");
+let button = document.querySelector(".rate-btn");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
 let cicrcle = document.querySelector(".cicrcle");
@@ -67,3 +68,8 @@ const calcoloPercentuale = function () {
   questionWrong.append(testoErrori, percent2, numeroRisposte2);
 };
 console.log(calcoloPercentuale());
+
+button.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = "../Feedbackpage.html";
+});
