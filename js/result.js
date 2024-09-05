@@ -1,7 +1,9 @@
 //localStorage.getItem (salva un valore in una cella di memoria del browser) serve a richiamare la variabile punteggio salvata nella question page
-const arrayRisposteCorrette = JSON.parse(localStorage.getItem("risposteCorrette")) || [];
+const arrayRisposteCorrette =
+  JSON.parse(localStorage.getItem("risposteCorrette")) || [];
 const arrayDomande = JSON.parse(localStorage.getItem("domandeUtente")) || [];
-const arrayRisposteUtente = JSON.parse(localStorage.getItem("risposteUtente")) || [];
+const arrayRisposteUtente =
+  JSON.parse(localStorage.getItem("risposteUtente")) || [];
 const punteggioSalvato = localStorage.getItem("punteggio");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
@@ -26,7 +28,9 @@ const calcoloPercentuale = function () {
 
   //calcolo percentuale di riempimento del colore (blu è quello variabile)
   let offset = circumference - (percentualeCorretta / 100) * circumference;
-  colorCircle.style.strokeDasharray = `${circumference - offset} ${circumference}`;
+  colorCircle.style.strokeDasharray = `${
+    circumference - offset
+  } ${circumference}`;
 
   //testo all'interno del grafico
   if (percentualeCorretta >= 51) {
@@ -94,31 +98,22 @@ let containerListaDomande = document.querySelector(".listaDomande");
 let listarisposte = document.querySelector(".listarisposte");
 
 for (let i = 0; i < arrayDomande.length; i++) {
-  // Crea un elemento <h3> per ogni domanda
   let domandaElem = document.createElement("h3");
   domandaElem.innerText = `Domanda: ${arrayDomande[i]}`;
+  domandaElem.classList.add("textDomande");
 
-  // Crea un elemento <p> per la risposta utente
   let rispostaUtenteElem = document.createElement("p");
-  rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]}`;
 
+  rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]}`;
+  rispostaUtenteElem.classList.add("textRisposteUtente");
+  if (arrayRisposteCorrette[i] === arrayRisposteUtente[i]) {
+    rispostaUtenteElem.classList.add("textRisposteCorrette");
+  }
   let rispostaCorrette = document.createElement("p");
   rispostaCorrette.innerText = `Risposta corretta: ${arrayRisposteCorrette[i]}`;
+  rispostaCorrette.classList.add("textRisposteCorrette");
 
-  // Aggiungi la domanda e la risposta al container
   containerListaDomande.appendChild(domandaElem);
   containerListaDomande.appendChild(rispostaUtenteElem);
   containerListaDomande.appendChild(rispostaCorrette);
 }
-
-/* arrayDomande.forEach((domanda, index) => {
-  let domandaElem = document.createElement("h3");
-  domandaElem.innerText = domanda;
-  containerListaDomande.appendChild(domandaElem);
-});
-arrayRisposteUtente.forEach((risposta) => {
-  let rispostaUtente = document.createElement("p");
-  rispostaUtente.innerText = risposta;
-  listarisposte.appendChild(rispostaUtente);
-  containerListaDomande.appendChild(listarisposte);
-});*/
