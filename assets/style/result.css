@@ -60,7 +60,6 @@ main {
   align-items: center;
   justify-content: space-around;
   gap: 20px;
-  
 }
 .containerText {
   font-size: 18px;
@@ -102,40 +101,39 @@ main {
   margin-left: 10px;
 }
 
-.feedbackDomande{
-    color: #00FFFF;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+.feedbackDomande {
+  color: #00ffff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
-.containerListaDomande{
+.containerListaDomande {
   margin-inline: 6rem;
-    border-left: solid 10px #900080;
+  border-left: solid 10px #900080;
 }
-.listaDomande{
+.listaDomande {
   margin: 10px;
-    text-align: start;
+  text-align: start;
 }
 
-.textDomande{
+.textDomande {
   font-size: 20px;
   font-weight: bold;
-  
 }
 
-.textRisposteUtente{
-  font-weight: 200;
-  color:red;
+.textRisposteUtente {
+  font-weight: 400;
+  color: #b3019e;
   margin-block: 3px;
 }
 
-.textRisposteCorrette{
+.textRisposteCorrette {
   font-weight: 200;
-    color: #2cd32c;
-    margin-bottom: 10px;
+  color: #00ffff;
+  margin-bottom: 10px;
 }
 
-footer{
+footer {
   text-align: center;
   margin-block: 2rem;
 }
