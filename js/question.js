@@ -79,6 +79,87 @@ const results = [
     correct_answer: "Gigahertz",
     incorrect_answers: ["Gigahotz", "Gigahetz", "Gigahatz"],
   },
+
+  {
+    type: "boolean",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "&quot;Windows NT&quot; is a monolithic kernel.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "Generally, which component of a computer draws the most power?",
+    correct_answer: "Video Card",
+    incorrect_answers: ["Hard Drive", "Processor", "Power Supply"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "On which day did the World Wide Web go online?",
+    correct_answer: "December 20, 1990",
+    incorrect_answers: ["December 17, 1996", "November 12, 1990", "November 24, 1995"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "Which programming language was developed by Sun Microsystems in 1995?",
+    correct_answer: "Java",
+    incorrect_answers: ["Python", "Solaris OS", "C++"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "What did the name of the Tor Anonymity Network orignially stand for?",
+    correct_answer: "The Onion Router",
+    incorrect_answers: ["The Only Router", "The Orange Router", "The Ominous Router"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "Unix Time is defined as the number of seconds that have elapsed since when?",
+    correct_answer: "Midnight, January 1, 1970",
+    incorrect_answers: ["Midnight, July 4, 1976", "Midnight on the creator of Unix&#039;s birthday", "Midnight, July 4, 1980"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "How many bits make up the significand portion of a single precision floating point number?",
+    correct_answer: "23",
+    incorrect_answers: ["8", "53", "15"],
+  },
+  {
+    type: "boolean",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "The first dual-core CPU was the Intel Pentium D.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "In computing terms, typically what does CLI stand for?",
+    correct_answer: "Command Line Interface",
+    incorrect_answers: ["Common Language Input", "Control Line Interface", "Common Language Interface"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
+    correct_answer: "C#",
+    incorrect_answers: ["Java", "C++", "Objective-C"],
+  },
 ];
 
 let punteggio = 0;
@@ -139,81 +220,90 @@ function quiz() {
     return;
   }
 
-  questionCount++;
   clearInterval(countdown);
 
-  let domandeRandom = Math.floor(Math.random() * results.length);
-  let questionData = results[domandeRandom];
-  results.splice(domandeRandom, 1);
+  let questionData;
+  let selzioneDiff = "medium"; // Seleziona la difficoltà desiderata
 
-  h1domande.innerText = questionData.question;
-  boxQuestion.innerHTML = "";
-  boxQuestion.appendChild(h1domande);
+  do {
+    let domandeRandom = Math.floor(Math.random() * results.length);
+    questionData = results[domandeRandom];
+    results.splice(domandeRandom, 1);
+  } while (questionData.difficulty !== selzioneDiff && results.length > 0);
 
-  let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
-  questionsArray(allAnswers);
+  if (questionData.difficulty === selzioneDiff) {
+    questionCount++;
 
-  let questionCorrect = questionData.correct_answer;
-  let questionIncorrect = questionData.incorrect_answers;
+    h1domande.innerText = questionData.question;
+    boxQuestion.innerHTML = "";
+    boxQuestion.appendChild(h1domande);
 
-  boxAnswer.innerHTML = "";
-  allAnswers.forEach((answer) => {
-    let button = document.createElement("button");
-    button.classList.add("styleButton");
-    button.innerText = answer;
+    let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
+    questionsArray(allAnswers);
 
-    button.addEventListener("click", () => {
-      clearInterval(countdown);
-      circle.classList.remove("colorCircle");
-      void circle.offsetWidth;
+    let questionCorrect = questionData.correct_answer;
+    let questionIncorrect = questionData.incorrect_answers;
 
-      const buttons = document.querySelectorAll(".styleButton");
-      buttons.forEach((btn) => {
-        btn.disabled = true;
-        if (btn.innerText === questionData.correct_answer) {
-          btn.classList.add("green");
-        } else {
-          btn.classList.add("red");
+    boxAnswer.innerHTML = "";
+    allAnswers.forEach((answer) => {
+      let button = document.createElement("button");
+      button.classList.add("styleButton");
+      button.innerText = answer;
+
+      button.addEventListener("click", () => {
+        clearInterval(countdown);
+        circle.classList.remove("colorCircle");
+        void circle.offsetWidth;
+
+        const buttons = document.querySelectorAll(".styleButton");
+        buttons.forEach((btn) => {
+          btn.disabled = true;
+          if (btn.innerText === questionData.correct_answer) {
+            btn.classList.add("green");
+          } else {
+            btn.classList.add("red");
+          }
+        });
+
+        risposteUtente.push(answer);
+        localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
+
+        if (answer === questionCorrect) {
+          punteggio++;
+          localStorage.setItem("punteggio", punteggio);
         }
+
+        setTimeout(() => {
+          circle.classList.add("colorCircle");
+
+          if (questionCount < maxQuestions) {
+            domandeUtente.push(questionData.question);
+            risposteCorrette.push(questionCorrect);
+            localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
+            localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
+            quiz();
+          } else {
+            tempoProva.innerHTML = "";
+            window.location.href = "../Results.html";
+          }
+        }, 700);
       });
 
-      risposteUtente.push(answer);
-      localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
-
-      if (answer === questionCorrect) {
-        punteggio++;
-        localStorage.setItem("punteggio", punteggio);
-      }
-
-      setTimeout(() => {
-        circle.classList.add("colorCircle");
-
-        if (questionCount < maxQuestions) {
-          domandeUtente.push(questionData.question);
-          risposteCorrette.push(questionCorrect);
-          localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
-          localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
-          quiz();
-          return domandeUtente;
-        } else {
-          tempoProva.innerHTML = "";
-          window.location.href = "../Results.html";
-        }
-      }, 700);
+      boxAnswer.appendChild(button);
     });
 
-    boxAnswer.appendChild(button);
-  });
+    startTimer();
+    let containerQuestionString = document.querySelector(".domande");
+    let questionString = document.querySelector(".counterQuestion");
 
-  startTimer();
-  let containerQuestionString = document.querySelector(".domande");
-  let questionString = document.querySelector(".counterQuestion");
+    span.innerText = "/10";
+    footer.appendChild(span);
 
-  span.innerText = "/10";
-  footer.appendChild(span);
-
-  questionString.innerText = `QUESTION ${questionCount} `;
-  containerQuestionString.appendChild(questionString);
+    questionString.innerText = `QUESTION ${questionCount} `;
+    containerQuestionString.appendChild(questionString);
+  } else {
+    console.log("Non ci sono più domande con la difficoltà desiderata.");
+  }
 }
 
 function questionsArray(array) {
