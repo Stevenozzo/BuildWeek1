@@ -1,4 +1,7 @@
-//localStorage.getItem (salva un valore in una cella di memoria del browser) serve a richiamare la variabile punteggio salvata nela question page
+//localStorage.getItem (salva un valore in una cella di memoria del browser) serve a richiamare la variabile punteggio salvata nella question page
+//const arrayRisposteCorrette = JSON.parse(localStorage.getItem("risposteCorrette")) || [];
+//const arrayDomande = JSON.parse(localStorage.getItem("domandeUtente")) || [];
+//const arrayRisposteUtente = JSON.parse(localStorage.getItem("risposteUtente")) || [];
 const punteggioSalvato = localStorage.getItem("punteggio");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
@@ -23,9 +26,7 @@ const calcoloPercentuale = function () {
 
   //calcolo percentuale di riempimento del colore (blu è quello variabile)
   let offset = circumference - (percentualeCorretta / 100) * circumference;
-  colorCircle.style.strokeDasharray = `${
-    circumference - offset
-  } ${circumference}`;
+  colorCircle.style.strokeDasharray = `${circumference - offset} ${circumference}`;
 
   //testo all'interno del grafico
   if (percentualeCorretta >= 51) {
@@ -88,3 +89,13 @@ button.addEventListener("click", (event) => {
   event.preventDefault();
   window.location.href = "../Feedbackpage.html";
 });
+// creazione feedback risposte
+/*let containerListaDomande = document.querySelector(".listaDomande");
+const listaRisposte = function () {
+  arrayDomande.forEach((singolaDomanda) => {
+    let domanda = document.createElement("h3");
+    domanda.innerText = singolaDomanda;
+    listaDomande.appendChild(domanda);
+  });
+};
+listaRisposte();*/

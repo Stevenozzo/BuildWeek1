@@ -11,8 +11,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     incorrect_answers: [".png", ".jpeg", ".gif"],
   },
@@ -20,8 +19,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer language would you associate Django framework with?",
+    question: "Which computer language would you associate Django framework with?",
     correct_answer: "Python",
     incorrect_answers: ["C#", "C++", "Java"],
   },
@@ -29,8 +27,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
+    question: "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -38,8 +35,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The Python programming language gets its name from the British comedy group Monty Python.",
+    question: "The Python programming language gets its name from the British comedy group Monty Python.",
     correct_answer: "True",
     incorrect_answers: ["False"],
   },
@@ -47,8 +43,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "In any programming language, what is the most common way to iterate through an array?",
+    question: "In any programming language, what is the most common way to iterate through an array?",
     correct_answer: "For loops",
     incorrect_answers: ["If Statements", "Do-while loops", "While loops"],
   },
@@ -56,8 +51,7 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The programming language Python is based off a modified version of JavaScript.",
+    question: "The programming language Python is based off a modified version of JavaScript.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -65,8 +59,7 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
+    question: "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
@@ -74,14 +67,9 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer hardware device provides an interface for all other connected devices to communicate?",
+    question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
     correct_answer: "Motherboard",
-    incorrect_answers: [
-      "Central Processing Unit",
-      "Hard Disk Drive",
-      "Random Access Memory",
-    ],
+    incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
   },
   {
     type: "multiple",
@@ -109,16 +97,14 @@ second.appendChild(timerElement);
 
 let circle = document.querySelector(".colorCircle");
 
-//contatore per le domande che si incrementa 
+//contatore per le domande che si incrementa
 let questionCount = 0;
 
 //numero di odmande massime nell'array
 const maxQuestions = 10;
 
-//timer per le domande 
+//timer per le domande
 const timePerQuestion = 60;
-
-
 
 //funzione per il timer
 let countdown;
@@ -141,21 +127,16 @@ function startTimer() {
         showResultsButton();
       }
     }
-  }, 1000); 
+  }, 1000);
 }
 
-//funzione che fa apparire il bottone per vedere i risultati
-function showResultsButton() {
-  if (!document.querySelector(".buttonResults button")) {
-    let resultButton = document.createElement("button");
-    resultButton.classList.add("styleButton");
-    resultButton.innerHTML = "Vedi risultati";
-    resultButton.addEventListener("click", () => {
-      window.location.href = "../Results.html";       //link che ci porta all'html del result page
-    });
-    boxResult.appendChild(resultButton);
-  }
-}
+let risposteUtente = [];
+let risposteCorrette = [];
+let domandeUtente = [];
+localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
+localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
+localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
+console.log(risposteUtente);
 
 function quiz() {
   if (questionCount >= maxQuestions || results.length === 0) {
@@ -173,36 +154,53 @@ function quiz() {
   boxQuestion.innerHTML = "";
   boxQuestion.appendChild(h1domande);
 
-  let allAnswers = [
-    questionData.correct_answer,
-    ...questionData.incorrect_answers,
-  ];
+  let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
   questionsArray(allAnswers);
+
+  let questionCorrect = questionData.correct_answer;
+  let questionIncorrect = questionData.incorrect_answers;
 
   boxAnswer.innerHTML = "";
   allAnswers.forEach((answer) => {
     let button = document.createElement("button");
     button.classList.add("styleButton");
     button.innerText = answer;
+
     button.addEventListener("click", () => {
       clearInterval(countdown);
       circle.classList.remove("colorCircle");
       void circle.offsetWidth;
+
+      const buttons = document.querySelectorAll(".styleButton");
+      buttons.forEach((btn) => {
+        btn.disabled = true;
+        if (btn.innerText === questionData.correct_answer) {
+          btn.classList.add("green");
+        } else {
+          btn.classList.add("red");
+        }
+      });
+
+      risposteUtente.push(answer);
+
+      if (answer === questionCorrect) {
+        punteggio++;
+        localStorage.setItem("punteggio", punteggio);
+      }
+
       setTimeout(() => {
         circle.classList.add("colorCircle");
 
-        if (answer === questionData.correct_answer) {
-          punteggio++;
-          localStorage.setItem("punteggio", punteggio);
-        }
-
         if (questionCount < maxQuestions) {
+          domandeUtente.push(questionData.question);
+          risposteCorrette.push(questionCorrect);
           quiz();
+          return domandeUtente;
         } else {
           tempoProva.innerHTML = "";
-          showResultsButton();
+          window.location.href = "../Results.html";
         }
-      }, 50);
+      }, 700);
     });
 
     boxAnswer.appendChild(button);

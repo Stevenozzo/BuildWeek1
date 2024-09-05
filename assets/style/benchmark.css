@@ -40,14 +40,12 @@ h1 {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
   border-radius: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-    0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .styleButton:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
-    0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
   background-color: #900080;
   border-color: #900080;
 }
@@ -75,7 +73,7 @@ header {
 }
 footer {
   justify-content: center;
-  display: flex;  
+  display: flex;
   padding-top: 5em;
 }
 footer span {
@@ -101,4 +99,24 @@ svg {
   font-size: 12px;
   font-weight: 200;
   margin-block: 3px;
+}
+.green {
+  background-color: green;
+}
+.green:hover {
+  background-color: green;
+  border-top: 3px solid green;
+  border-left: 2.5px solid green;
+  border-right: 2.5px solid green;
+  border-bottom: 1px solid green;
+}
+.red {
+  background-color: red;
+}
+.red:hover {
+  background-color: red;
+  border-top: 3px solid red;
+  border-left: 2.5px solid red;
+  border-right: 2.5px solid red;
+  border-bottom: 1px solid red;
 }
