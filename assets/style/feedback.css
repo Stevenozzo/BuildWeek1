@@ -44,11 +44,10 @@ p {
 
 /* impostazioni per classi e id*/
 #logo {
-  width: 9em;
+  width: 11em;
   height: auto;
   padding-top: 2.5em;
-  margin-bottom: 4rem;
-  margin-left: 9em;
+  margin-bottom: 7rem;
   cursor: pointer;
 }
 #title {

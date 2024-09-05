@@ -242,7 +242,6 @@ function quiz() {
     questionsArray(allAnswers);
 
     let questionCorrect = questionData.correct_answer;
-    let questionIncorrect = questionData.incorrect_answers;
 
     boxAnswer.innerHTML = "";
     allAnswers.forEach((answer) => {
