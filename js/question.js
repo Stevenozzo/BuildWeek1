@@ -133,10 +133,6 @@ function startTimer() {
 let risposteUtente = [];
 let risposteCorrette = [];
 let domandeUtente = [];
-localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
-localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
-localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
-console.log(risposteUtente);
 
 function quiz() {
   if (questionCount >= maxQuestions || results.length === 0) {
@@ -182,6 +178,7 @@ function quiz() {
       });
 
       risposteUtente.push(answer);
+      localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
 
       if (answer === questionCorrect) {
         punteggio++;
@@ -194,6 +191,8 @@ function quiz() {
         if (questionCount < maxQuestions) {
           domandeUtente.push(questionData.question);
           risposteCorrette.push(questionCorrect);
+          localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
+          localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
           quiz();
           return domandeUtente;
         } else {

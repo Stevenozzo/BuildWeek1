@@ -1,7 +1,7 @@
 //localStorage.getItem (salva un valore in una cella di memoria del browser) serve a richiamare la variabile punteggio salvata nella question page
-//const arrayRisposteCorrette = JSON.parse(localStorage.getItem("risposteCorrette")) || [];
-//const arrayDomande = JSON.parse(localStorage.getItem("domandeUtente")) || [];
-//const arrayRisposteUtente = JSON.parse(localStorage.getItem("risposteUtente")) || [];
+const arrayRisposteCorrette = JSON.parse(localStorage.getItem("risposteCorrette")) || [];
+const arrayDomande = JSON.parse(localStorage.getItem("domandeUtente")) || [];
+const arrayRisposteUtente = JSON.parse(localStorage.getItem("risposteUtente")) || [];
 const punteggioSalvato = localStorage.getItem("punteggio");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
@@ -90,12 +90,35 @@ button.addEventListener("click", (event) => {
   window.location.href = "../Feedbackpage.html";
 });
 // creazione feedback risposte
-/*let containerListaDomande = document.querySelector(".listaDomande");
-const listaRisposte = function () {
-  arrayDomande.forEach((singolaDomanda) => {
-    let domanda = document.createElement("h3");
-    domanda.innerText = singolaDomanda;
-    listaDomande.appendChild(domanda);
-  });
-};
-listaRisposte();*/
+let containerListaDomande = document.querySelector(".listaDomande");
+let listarisposte = document.querySelector(".listarisposte");
+
+for (let i = 0; i < arrayDomande.length; i++) {
+  // Crea un elemento <h3> per ogni domanda
+  let domandaElem = document.createElement("h3");
+  domandaElem.innerText = `Domanda: ${arrayDomande[i]}`;
+
+  // Crea un elemento <p> per la risposta utente
+  let rispostaUtenteElem = document.createElement("p");
+  rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]}`;
+
+  let rispostaCorrette = document.createElement("p");
+  rispostaCorrette.innerText = `Risposta corretta: ${arrayRisposteCorrette[i]}`;
+
+  // Aggiungi la domanda e la risposta al container
+  containerListaDomande.appendChild(domandaElem);
+  containerListaDomande.appendChild(rispostaUtenteElem);
+  containerListaDomande.appendChild(rispostaCorrette);
+}
+
+/* arrayDomande.forEach((domanda, index) => {
+  let domandaElem = document.createElement("h3");
+  domandaElem.innerText = domanda;
+  containerListaDomande.appendChild(domandaElem);
+});
+arrayRisposteUtente.forEach((risposta) => {
+  let rispostaUtente = document.createElement("p");
+  rispostaUtente.innerText = risposta;
+  listarisposte.appendChild(rispostaUtente);
+  containerListaDomande.appendChild(listarisposte);
+});*/
