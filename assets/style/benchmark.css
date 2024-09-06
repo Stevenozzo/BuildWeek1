@@ -158,3 +158,9 @@ svg {
   letter-spacing: 1px;
   margin-bottom: 1em;
 }
+.nascondi {
+  display: none;
+}
+.mostra {
+  display: block;
+}
