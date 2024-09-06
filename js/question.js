@@ -500,5 +500,3 @@ function questionsArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
-//quiz();
