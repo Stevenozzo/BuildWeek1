@@ -11,7 +11,8 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    question:
+      "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     incorrect_answers: [".png", ".jpeg", ".gif"],
   },
@@ -19,7 +20,8 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "Which computer language would you associate Django framework with?",
+    question:
+      "Which computer language would you associate Django framework with?",
     correct_answer: "Python",
     incorrect_answers: ["C#", "C++", "Java"],
   },
@@ -27,7 +29,8 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
+    question:
+      "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -35,7 +38,8 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "The Python programming language gets its name from the British comedy group Monty Python.",
+    question:
+      "The Python programming language gets its name from the British comedy group Monty Python.",
     correct_answer: "True",
     incorrect_answers: ["False"],
   },
@@ -43,7 +47,8 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "In any programming language, what is the most common way to iterate through an array?",
+    question:
+      "In any programming language, what is the most common way to iterate through an array?",
     correct_answer: "For loops",
     incorrect_answers: ["If Statements", "Do-while loops", "While loops"],
   },
@@ -51,7 +56,8 @@ const results = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "The programming language Python is based off a modified version of JavaScript.",
+    question:
+      "The programming language Python is based off a modified version of JavaScript.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -59,7 +65,8 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "Which programming language shares its name with an island in Indonesia?",
+    question:
+      "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
@@ -67,9 +74,14 @@ const results = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
+    question:
+      "Which computer hardware device provides an interface for all other connected devices to communicate?",
     correct_answer: "Motherboard",
-    incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
+    incorrect_answers: [
+      "Central Processing Unit",
+      "Hard Disk Drive",
+      "Random Access Memory",
+    ],
   },
   {
     type: "multiple",
@@ -102,13 +114,18 @@ const results = [
     category: "Science: Computers",
     question: "On which day did the World Wide Web go online?",
     correct_answer: "December 20, 1990",
-    incorrect_answers: ["December 17, 1996", "November 12, 1990", "November 24, 1995"],
+    incorrect_answers: [
+      "December 17, 1996",
+      "November 12, 1990",
+      "November 24, 1995",
+    ],
   },
   {
     type: "multiple",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "Which programming language was developed by Sun Microsystems in 1995?",
+    question:
+      "Which programming language was developed by Sun Microsystems in 1995?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "Solaris OS", "C++"],
   },
@@ -116,23 +133,34 @@ const results = [
     type: "multiple",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "What did the name of the Tor Anonymity Network orignially stand for?",
+    question:
+      "What did the name of the Tor Anonymity Network orignially stand for?",
     correct_answer: "The Onion Router",
-    incorrect_answers: ["The Only Router", "The Orange Router", "The Ominous Router"],
+    incorrect_answers: [
+      "The Only Router",
+      "The Orange Router",
+      "The Ominous Router",
+    ],
   },
   {
     type: "multiple",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "Unix Time is defined as the number of seconds that have elapsed since when?",
+    question:
+      "Unix Time is defined as the number of seconds that have elapsed since when?",
     correct_answer: "Midnight, January 1, 1970",
-    incorrect_answers: ["Midnight, July 4, 1976", "Midnight on the creator of Unix&#039;s birthday", "Midnight, July 4, 1980"],
+    incorrect_answers: [
+      "Midnight, July 4, 1976",
+      "Midnight on the creator of Unix's birthday",
+      "Midnight, July 4, 1980",
+    ],
   },
   {
     type: "multiple",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "How many bits make up the significand portion of a single precision floating point number?",
+    question:
+      "How many bits make up the significand portion of a single precision floating point number?",
     correct_answer: "23",
     incorrect_answers: ["8", "53", "15"],
   },
@@ -150,13 +178,18 @@ const results = [
     category: "Science: Computers",
     question: "In computing terms, typically what does CLI stand for?",
     correct_answer: "Command Line Interface",
-    incorrect_answers: ["Common Language Input", "Control Line Interface", "Common Language Interface"],
+    incorrect_answers: [
+      "Common Language Input",
+      "Control Line Interface",
+      "Common Language Interface",
+    ],
   },
   {
     type: "multiple",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
+    question:
+      "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
     correct_answer: "C#",
     incorrect_answers: ["Java", "C++", "Objective-C"],
   },
@@ -167,13 +200,18 @@ const results = [
     category: "Science: Computers",
     question: "Which kind of algorithm is Ron Rivest not famous for creating?",
     correct_answer: "Secret sharing scheme",
-    incorrect_answers: ["Hashing algorithm", "Asymmetric encryption", "Stream cipher"],
+    incorrect_answers: [
+      "Hashing algorithm",
+      "Asymmetric encryption",
+      "Stream cipher",
+    ],
   },
   {
     type: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "What is the codename of the eighth generation Intel Core micro-architecture launched in October 2017?",
+    question:
+      "What is the codename of the eighth generation Intel Core micro-architecture launched in October 2017?",
     correct_answer: "Coffee Lake",
     incorrect_answers: ["Sandy Bridge", "Skylake", "Broadwell"],
   },
@@ -181,7 +219,8 @@ const results = [
     type: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
+    question:
+      "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
     correct_answer: "Heartbleed",
     incorrect_answers: ["Shellshock", "Corrupted Blood", "Shellscript"],
   },
@@ -189,7 +228,8 @@ const results = [
     typ: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "Released in 2001, the first edition of Apple&#039;s Mac OS X operating system (version 10.0) was given what animal code name?",
+    question:
+      "Released in 2001, the first edition of Apple's Mac OS X operating system (version 10.0) was given what animal code name?",
     correct_answer: "Cheetah",
     incorrect_answers: ["Puma", "Tiger", "Leopard"],
   },
@@ -197,9 +237,14 @@ const results = [
     type: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "Which of these is not a layer in the OSI model for data communications?",
+    question:
+      "Which of these is not a layer in the OSI model for data communications?",
     correct_answer: "Connection Layer",
-    incorrect_answers: ["Application Layer", "Transport Layer", "Physical Layer"],
+    incorrect_answers: [
+      "Application Layer",
+      "Transport Layer",
+      "Physical Layer",
+    ],
   },
   {
     type: "boolean",
@@ -213,7 +258,8 @@ const results = [
     type: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "America Online (AOL) started out as which of these online service providers?",
+    question:
+      "America Online (AOL) started out as which of these online service providers?",
     correct_answer: "Quantum Link",
     incorrect_answers: ["CompuServe", "Prodigy", "GEnie"],
   },
@@ -237,9 +283,10 @@ const results = [
     type: "multiple",
     difficulty: "hard",
     category: "Science: Computers",
-    question: "According to DeMorgan&#039;s Theorem, the Boolean expression (AB)&#039; is equivalent to:",
-    correct_answer: "A&#039; + B&#039;",
-    incorrect_answers: ["A&#039;B + B&#039;A", "A&#039;B&#039;", "AB&#039; + AB"],
+    question:
+      "According to DeMorgan's Theorem, the Boolean expression (AB) is equivalent to:",
+    correct_answer: "A + B",
+    incorrect_answers: ["AB + BA", "AB", "AB + AB"],
   },
 ];
 
@@ -300,7 +347,11 @@ let buttonDifficoltaMedium = document.createElement("button");
 
 let buttonDifficoltaHard = document.createElement("button");
 
-let buttonsDIfficolta = [buttonDifficoltaEasy, buttonDifficoltaMedium, buttonDifficoltaHard];
+let buttonsDIfficolta = [
+  buttonDifficoltaEasy,
+  buttonDifficoltaMedium,
+  buttonDifficoltaHard,
+];
 
 let selzioneDiff = "";
 
@@ -314,7 +365,11 @@ const selezioneDifficoltaUtente = function () {
   buttonDifficoltaHard.innerText = "hard";
   buttonDifficoltaHard.classList.add("buttonDifficolta");
 
-  selezioneDifficolta.append(buttonDifficoltaEasy, buttonDifficoltaMedium, buttonDifficoltaHard);
+  selezioneDifficolta.append(
+    buttonDifficoltaEasy,
+    buttonDifficoltaMedium,
+    buttonDifficoltaHard
+  );
 
   buttonsDIfficolta.forEach((but) => {
     but.addEventListener("click", () => {
@@ -339,7 +394,11 @@ function quiz() {
 
   clearInterval(countdown);
 
-  if (selzioneDiff === buttonDifficoltaEasy.innerText || selzioneDiff === buttonDifficoltaMedium.innerText || selzioneDiff === buttonDifficoltaHard.innerText) {
+  if (
+    selzioneDiff === buttonDifficoltaEasy.innerText ||
+    selzioneDiff === buttonDifficoltaMedium.innerText ||
+    selzioneDiff === buttonDifficoltaHard.innerText
+  ) {
     let questionData;
 
     do {
@@ -355,7 +414,10 @@ function quiz() {
       boxQuestion.innerHTML = "";
       boxQuestion.appendChild(h1domande);
 
-      let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
+      let allAnswers = [
+        questionData.correct_answer,
+        ...questionData.incorrect_answers,
+      ];
       questionsArray(allAnswers);
 
       let questionCorrect = questionData.correct_answer;
@@ -382,7 +444,10 @@ function quiz() {
           });
 
           risposteUtente.push(answer);
-          localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
+          localStorage.setItem(
+            "risposteUtente",
+            JSON.stringify(risposteUtente)
+          );
 
           if (answer === questionCorrect) {
             punteggio++;
@@ -395,8 +460,14 @@ function quiz() {
             if (questionCount < maxQuestions) {
               domandeUtente.push(questionData.question);
               risposteCorrette.push(questionCorrect);
-              localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
-              localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
+              localStorage.setItem(
+                "domandeUtente",
+                JSON.stringify(domandeUtente)
+              );
+              localStorage.setItem(
+                "risposteCorrette",
+                JSON.stringify(risposteCorrette)
+              );
               quiz();
             } else {
               tempoProva.innerHTML = "";
