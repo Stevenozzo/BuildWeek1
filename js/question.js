@@ -96,7 +96,7 @@ const results = [
     type: "boolean",
     difficulty: "medium",
     category: "Science: Computers",
-    question: "&quot;Windows NT&quot; is a monolithic kernel.",
+    question: "Windows NT is a monolithic kernel.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
