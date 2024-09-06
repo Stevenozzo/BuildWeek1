@@ -120,3 +120,41 @@ svg {
   border-right: 2.5px solid red;
   border-bottom: 1px solid red;
 }
+.selezione-difficolta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selezione-diff {
+  display: none;
+}
+.buttonDifficolta {
+  height: 4rem;
+  text-align: center;
+  width: 18rem;
+  margin: 13px;
+  color: white;
+  border-top: 3px solid rgba(255, 255, 255, 1);
+  border-left: 2.5px solid rgba(255, 255, 255, 1);
+  border-right: 2.5px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-block: 2em;
+}
+.buttonDifficolta:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(255, 255, 255, 0.3) inset;
+  background-color: #900080;
+  border-color: #900080;
+}
+.selezione-difficolta h1 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+}

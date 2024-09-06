@@ -1,9 +1,7 @@
 //localStorage.getItem (salva un valore in una cella di memoria del browser) serve a richiamare la variabile punteggio salvata nella question page
-const arrayRisposteCorrette =
-  JSON.parse(localStorage.getItem("risposteCorrette")) || [];
+const arrayRisposteCorrette = JSON.parse(localStorage.getItem("risposteCorrette")) || [];
 const arrayDomande = JSON.parse(localStorage.getItem("domandeUtente")) || [];
-const arrayRisposteUtente =
-  JSON.parse(localStorage.getItem("risposteUtente")) || [];
+const arrayRisposteUtente = JSON.parse(localStorage.getItem("risposteUtente")) || [];
 const punteggioSalvato = localStorage.getItem("punteggio");
 let conteinerAll = document.querySelector(".container-all");
 let questionCorrect = document.querySelector(".correct");
@@ -28,9 +26,7 @@ const calcoloPercentuale = function () {
 
   //calcolo percentuale di riempimento del colore (blu è quello variabile)
   let offset = circumference - (percentualeCorretta / 100) * circumference;
-  colorCircle.style.strokeDasharray = `${
-    circumference - offset
-  } ${circumference}`;
+  colorCircle.style.strokeDasharray = `${circumference - offset} ${circumference}`;
 
   //testo all'interno del grafico
   if (percentualeCorretta >= 51) {
@@ -104,10 +100,11 @@ for (let i = 0; i < arrayDomande.length; i++) {
 
   let rispostaUtenteElem = document.createElement("p");
 
-  rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]}`;
+  rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]}❌`;
   rispostaUtenteElem.classList.add("textRisposteUtente");
   if (arrayRisposteCorrette[i] === arrayRisposteUtente[i]) {
     rispostaUtenteElem.classList.add("textRisposteCorrette");
+    rispostaUtenteElem.innerText = `Risposta utente: ${arrayRisposteUtente[i]} ✅`;
   }
   let rispostaCorrette = document.createElement("p");
   rispostaCorrette.innerText = `Risposta corretta: ${arrayRisposteCorrette[i]}`;

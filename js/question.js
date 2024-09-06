@@ -160,6 +160,87 @@ const results = [
     correct_answer: "C#",
     incorrect_answers: ["Java", "C++", "Objective-C"],
   },
+
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Which kind of algorithm is Ron Rivest not famous for creating?",
+    correct_answer: "Secret sharing scheme",
+    incorrect_answers: ["Hashing algorithm", "Asymmetric encryption", "Stream cipher"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "What is the codename of the eighth generation Intel Core micro-architecture launched in October 2017?",
+    correct_answer: "Coffee Lake",
+    incorrect_answers: ["Sandy Bridge", "Skylake", "Broadwell"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
+    correct_answer: "Heartbleed",
+    incorrect_answers: ["Shellshock", "Corrupted Blood", "Shellscript"],
+  },
+  {
+    typ: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Released in 2001, the first edition of Apple&#039;s Mac OS X operating system (version 10.0) was given what animal code name?",
+    correct_answer: "Cheetah",
+    incorrect_answers: ["Puma", "Tiger", "Leopard"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Which of these is not a layer in the OSI model for data communications?",
+    correct_answer: "Connection Layer",
+    incorrect_answers: ["Application Layer", "Transport Layer", "Physical Layer"],
+  },
+  {
+    type: "boolean",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "DHCP stands for Dynamic Host Configuration Port.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "America Online (AOL) started out as which of these online service providers?",
+    correct_answer: "Quantum Link",
+    incorrect_answers: ["CompuServe", "Prodigy", "GEnie"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Who is the founder of Palantir?",
+    correct_answer: "Peter Thiel",
+    incorrect_answers: ["Mark Zuckerberg", "Marc Benioff", "Jack Dorsey"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "What internet protocol was documented in RFC 1459?",
+    correct_answer: "IRC",
+    incorrect_answers: ["HTTP", "HTTPS", "FTP"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "According to DeMorgan&#039;s Theorem, the Boolean expression (AB)&#039; is equivalent to:",
+    correct_answer: "A&#039; + B&#039;",
+    incorrect_answers: ["A&#039;B + B&#039;A", "A&#039;B&#039;", "AB&#039; + AB"],
+  },
 ];
 
 let punteggio = 0;
@@ -176,7 +257,7 @@ let timerElement = document.createElement("p");
 let second = document.querySelector(".second");
 second.appendChild(timerElement);
 
-let circle = document.querySelector(".colorCircle");
+let circle = document.getElementById("cerchio1");
 
 //contatore per le domande che si incrementa
 let questionCount = 0;
@@ -211,6 +292,42 @@ function startTimer() {
   }, 1000);
 }
 
+let selezioneDifficolta = document.querySelector(".selezione-difficolta");
+
+let buttonDifficoltaEasy = document.createElement("button");
+
+let buttonDifficoltaMedium = document.createElement("button");
+
+let buttonDifficoltaHard = document.createElement("button");
+
+let buttonsDIfficolta = [buttonDifficoltaEasy, buttonDifficoltaMedium, buttonDifficoltaHard];
+
+let selzioneDiff = "";
+
+const selezioneDifficoltaUtente = function () {
+  buttonDifficoltaEasy.innerText = "easy";
+  buttonDifficoltaEasy.classList.add("buttonDifficolta");
+
+  buttonDifficoltaMedium.innerText = "medium";
+  buttonDifficoltaMedium.classList.add("buttonDifficolta");
+
+  buttonDifficoltaHard.innerText = "hard";
+  buttonDifficoltaHard.classList.add("buttonDifficolta");
+
+  selezioneDifficolta.append(buttonDifficoltaEasy, buttonDifficoltaMedium, buttonDifficoltaHard);
+
+  buttonsDIfficolta.forEach((but) => {
+    but.addEventListener("click", () => {
+      selzioneDiff = but.innerText;
+      quiz();
+      circle.classList.add("colorCircle");
+      selezioneDifficolta.classList.add("selezione-diff");
+    });
+  });
+};
+
+selezioneDifficoltaUtente();
+
 let risposteUtente = [];
 let risposteCorrette = [];
 let domandeUtente = [];
@@ -222,86 +339,87 @@ function quiz() {
 
   clearInterval(countdown);
 
-  let questionData;
-  let selzioneDiff = "medium"; // Seleziona la difficoltà desiderata
+  if (selzioneDiff === buttonDifficoltaEasy.innerText || selzioneDiff === buttonDifficoltaMedium.innerText || selzioneDiff === buttonDifficoltaHard.innerText) {
+    let questionData;
 
-  do {
-    let domandeRandom = Math.floor(Math.random() * results.length);
-    questionData = results[domandeRandom];
-    results.splice(domandeRandom, 1);
-  } while (questionData.difficulty !== selzioneDiff && results.length > 0);
+    do {
+      let domandeRandom = Math.floor(Math.random() * results.length);
+      questionData = results[domandeRandom];
+      results.splice(domandeRandom, 1);
+    } while (questionData.difficulty !== selzioneDiff && results.length > 0);
 
-  if (questionData.difficulty === selzioneDiff) {
-    questionCount++;
+    if (questionData.difficulty === selzioneDiff.toLowerCase()) {
+      questionCount++;
 
-    h1domande.innerText = questionData.question;
-    boxQuestion.innerHTML = "";
-    boxQuestion.appendChild(h1domande);
+      h1domande.innerText = questionData.question;
+      boxQuestion.innerHTML = "";
+      boxQuestion.appendChild(h1domande);
 
-    let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
-    questionsArray(allAnswers);
+      let allAnswers = [questionData.correct_answer, ...questionData.incorrect_answers];
+      questionsArray(allAnswers);
 
-    let questionCorrect = questionData.correct_answer;
+      let questionCorrect = questionData.correct_answer;
 
-    boxAnswer.innerHTML = "";
-    allAnswers.forEach((answer) => {
-      let button = document.createElement("button");
-      button.classList.add("styleButton");
-      button.innerText = answer;
+      boxAnswer.innerHTML = "";
+      allAnswers.forEach((answer) => {
+        let button = document.createElement("button");
+        button.classList.add("styleButton");
+        button.innerText = answer;
 
-      button.addEventListener("click", () => {
-        clearInterval(countdown);
-        circle.classList.remove("colorCircle");
-        void circle.offsetWidth;
+        button.addEventListener("click", () => {
+          clearInterval(countdown);
+          circle.classList.remove("colorCircle");
+          void circle.offsetWidth;
 
-        const buttons = document.querySelectorAll(".styleButton");
-        buttons.forEach((btn) => {
-          btn.disabled = true;
-          if (btn.innerText === questionData.correct_answer) {
-            btn.classList.add("green");
-          } else {
-            btn.classList.add("red");
+          const buttons = document.querySelectorAll(".styleButton");
+          buttons.forEach((btn) => {
+            btn.disabled = true;
+            if (btn.innerText === questionData.correct_answer) {
+              btn.classList.add("green");
+            } else {
+              btn.classList.add("red");
+            }
+          });
+
+          risposteUtente.push(answer);
+          localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
+
+          if (answer === questionCorrect) {
+            punteggio++;
+            localStorage.setItem("punteggio", punteggio);
           }
+
+          setTimeout(() => {
+            circle.classList.add("colorCircle");
+
+            if (questionCount < maxQuestions) {
+              domandeUtente.push(questionData.question);
+              risposteCorrette.push(questionCorrect);
+              localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
+              localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
+              quiz();
+            } else {
+              tempoProva.innerHTML = "";
+              window.location.href = "../Results.html";
+            }
+          }, 700);
         });
 
-        risposteUtente.push(answer);
-        localStorage.setItem("risposteUtente", JSON.stringify(risposteUtente));
-
-        if (answer === questionCorrect) {
-          punteggio++;
-          localStorage.setItem("punteggio", punteggio);
-        }
-
-        setTimeout(() => {
-          circle.classList.add("colorCircle");
-
-          if (questionCount < maxQuestions) {
-            domandeUtente.push(questionData.question);
-            risposteCorrette.push(questionCorrect);
-            localStorage.setItem("domandeUtente", JSON.stringify(domandeUtente));
-            localStorage.setItem("risposteCorrette", JSON.stringify(risposteCorrette));
-            quiz();
-          } else {
-            tempoProva.innerHTML = "";
-            window.location.href = "../Results.html";
-          }
-        }, 700);
+        boxAnswer.appendChild(button);
       });
 
-      boxAnswer.appendChild(button);
-    });
+      startTimer();
+      let containerQuestionString = document.querySelector(".domande");
+      let questionString = document.querySelector(".counterQuestion");
 
-    startTimer();
-    let containerQuestionString = document.querySelector(".domande");
-    let questionString = document.querySelector(".counterQuestion");
+      span.innerText = "/10";
+      footer.appendChild(span);
 
-    span.innerText = "/10";
-    footer.appendChild(span);
-
-    questionString.innerText = `QUESTION ${questionCount} `;
-    containerQuestionString.appendChild(questionString);
-  } else {
-    console.log("Non ci sono più domande con la difficoltà desiderata.");
+      questionString.innerText = `QUESTION ${questionCount} `;
+      containerQuestionString.appendChild(questionString);
+    } else {
+      console.log("Non ci sono più domande con la difficoltà desiderata.");
+    }
   }
 }
 
@@ -312,4 +430,4 @@ function questionsArray(array) {
   }
 }
 
-quiz();
+//quiz();
