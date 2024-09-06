@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <link rel="stylesheet" href="./assets/style/reset.css" />
+    <link rel="stylesheet" href="./assets/style/konamiresults.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/epicode_logo.png" alt="LOGO EPICODE" />
+    </header>
+    <main>
+      <div class="results">
+        <h1>Results</h1>
+        <p>Hai attivato il Konami Code!</p>
+      </div>
+
+      <div class="container-all">
+        <div class="correct"></div>
+
+        <div class="cicrcle">
+          <svg width="400" height="400">
+            <circle
+              cx="200"
+              cy="200"
+              r="160"
+              stroke="#900080"
+              stroke-width="50"
+              fill="none"
+            />
+
+            <circle
+              class="colorCircle"
+              cx="200"
+              cy="200"
+              r="160"
+              stroke=""
+              stroke-width="50"
+              fill="none"
+              transform="rotate(270 200 200)"
+            />
+          </svg>
+
+          <div class="containerText"></div>
+        </div>
+
+        <div class="wrong"></div>
+      </div>
+      <div>
+        <h2 class="feedbackDomande"></h2>
+      </div>
+      <div class="containerListaDomande">
+        <div class="listaDomande"></div>
+      </div>
+    </main>
+    <footer>
+      <button class="rate-btn">RATE US</button>
+    </footer>
+    <script src="./js/konamiresults.js"></script>
+  </body>
+</html>

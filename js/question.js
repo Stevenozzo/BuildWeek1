@@ -1,3 +1,30 @@
+//Sequenza Konami Code
+const konamiCode = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
+];
+let konamiIndex = 0;
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+
+    if (konamiIndex === konamiCode.length) {
+      window.location.href = "../KonamiResults.html";
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
 const results = [
   {
     type: "multiple",

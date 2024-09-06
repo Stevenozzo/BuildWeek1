@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+body {
+  color: white;
+  background-image: url("../bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-inline: 5em;
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+}
+img {
+  width: 11em;
+  height: auto;
+  padding-top: 2.5em;
+  margin-bottom: 7rem;
+}
+main {
+  text-align: center;
+}
+.results {
+  margin-bottom: 3rem;
+}
+.results h1 {
+  font-size: 70px;
+  font-weight: 550;
+}
+.results p {
+  font-size: 25px;
+  letter-spacing: 1.5px;
+  padding-top: 3px;
+}
+.rate-btn {
+  padding: 14px 60px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.rate-btn:hover {
+  background-color: #00ffff;
+  color: white;
+}
+.passed {
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+.notPassed {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.container-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.containerText {
+  font-size: 18px;
+  position: relative;
+  bottom: 16rem;
+}
+.paragrafoCerchio {
+  background-image: url("../Galaga_Fighter.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 203px;
+  margin-top: 13px;
+  padding: 60px;
+}
+.correct,
+.wrong {
+  font-size: 50px;
+  width: 120px;
+  text-align: center;
+  bottom: 2rem;
+  position: relative;
+}
+.correct {
+  color: white;
+}
+
+.wrong {
+  color: white;
+}
+.colorCircle {
+  transition: stroke-dasharray 0.5s ease, stroke 0.5s ease;
+  stroke: #00ffff;
+  stroke-dasharray: 0, 1000;
+}
+.percent {
+  font-weight: bold;
+}
+.numRisposte {
+  font-weight: 200;
+  font-size: 15px;
+  padding-right: 60px;
+  display: flex;
+  width: 10em;
+  margin-left: 10px;
+}
+
+.feedbackDomande {
+  color: #00ffff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.containerListaDomande {
+  margin-left: 25rem;
+  border-left: solid 10px #900080;
+}
+.listaDomande {
+  margin: 10px;
+  text-align: start;
+}
+
+.textDomande {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.textRisposteUtente {
+  font-weight: 400;
+  color: #b3019e;
+  margin-block: 3px;
+}
+
+.textRisposteCorrette {
+  font-weight: 200;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-block: 2rem;
+}
