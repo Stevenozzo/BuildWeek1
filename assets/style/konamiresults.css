@@ -30,6 +30,10 @@ main {
   letter-spacing: 1.5px;
   padding-top: 3px;
   font-family: "Press Start 2P", system-ui;
+  font-weight: bold;
+  background: linear-gradient(90deg, #900080, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .rate-btn {
   padding: 14px 60px;
